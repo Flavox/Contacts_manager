@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to my sandbox, a contacts register.
 
-Things you may want to cover:
+I use Ruby on Rails v7.1.2
+And some gems so don't forget:
+    bundle install
 
-* Ruby version
+There are 2 users with a total of fifty contacts between them.
+    rails db:create
+    rails db:migrate
+    rails db:seed
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You will find the credentials in the seed.rb file.
