@@ -23,6 +23,11 @@
     <p class='fw-bold'>Personal notes :</p>
     <%= @contact.note %>
   </div>
+  <br>
+  <div class='gap-3'>
+    <%= link_to '🎨 Edit', edit_contact_path(@contact) %>
+    <%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </div>
   <br><br>
   <%= link_to '⏪ Back', contacts_path %>
 </div>
