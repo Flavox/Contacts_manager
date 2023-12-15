@@ -26,10 +26,10 @@ User.create(
 )
 puts ':)'
 User.create(
-  first_name: 'Lala',
-  last_name: 'Toto',
-  email: 'lala@toto.fr',
-  password: '123456'
+  first_name: 'Mario',
+  last_name: 'Bros',
+  email: 'mario@bros.fr',
+  password: 'azerty'
 )
 puts ':) 2 users created !'
 

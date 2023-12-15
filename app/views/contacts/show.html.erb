@@ -1,0 +1,33 @@
+<div class="container">
+  <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+  <div class='d-flex gap-2'>
+    <p class='fw-bold'>Phone number :</p><%= @contact.phone_number %>
+  </div>
+  <div class='d-flex gap-2'>
+    <p class='fw-bold'>Address :</p><%= @contact.address %>
+  </div>
+  <div class='d-flex gap-2'>
+    <p class='fw-bold'>Date of birth :</p><%= @contact.birthday %>
+  </div>
+  <div class='d-flex gap-2'>
+    <p class='fw-bold'>Relationship :</p>
+  </div>
+  <div>
+    <ul>
+      <% @contact.relations.each do |relation| %>
+        <li><%= relation.relation_type %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div>
+    <p class='fw-bold'>Personal notes :</p>
+    <%= @contact.note %>
+  </div>
+  <br>
+  <div class='gap-3'>
+    <%= link_to '🎨 Edit', edit_contact_path(@contact) %>
+    <%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </div>
+  <br><br>
+  <%= link_to '⏪ Back', contacts_path %>
+</div>
