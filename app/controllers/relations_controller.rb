@@ -1,7 +1,7 @@
 class RelationsController < ApplicationController
 
   def index
-    @relations = Relation.all
+    @relations = current_user.relations
   end
 
   def new
@@ -10,6 +10,7 @@ class RelationsController < ApplicationController
 
   def create
     @relation = Relation.new(relation_params)
+    @relation.user = current_user
     @relation.save
   end
 
