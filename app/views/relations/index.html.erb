@@ -6,6 +6,8 @@
     <% @relations.each do |relation| %>
       <li>
         <%= relation.relation_type %>
+        <%= link_to '🎨 Edit', edit_relation_path(relation) %>
+        <%= link_to '💣 Delete', relation_path(relation), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
       </li>
     <% end %>
   </ul>

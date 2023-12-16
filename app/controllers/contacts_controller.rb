@@ -27,12 +27,12 @@ class ContactsController < ApplicationController
 
   def update
     @contact.update(contact_params)
-    redirect_to contact_path(@contact)
+    redirect_to contact_path(@contact), notice: 'Contact updated'
   end
 
   def destroy
     @contact.destroy
-    redirect_to contacts_path
+    redirect_to contacts_path, notice: 'Contact deleted'
   end
 
   private

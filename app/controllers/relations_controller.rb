@@ -1,4 +1,5 @@
 class RelationsController < ApplicationController
+before_action :set_relation, only: %i[edit update destroy]
 
   def index
     @relations = current_user.relations
@@ -11,10 +12,31 @@ class RelationsController < ApplicationController
   def create
     @relation = Relation.new(relation_params)
     @relation.user = current_user
-    @relation.save
+    if @relation.save
+      redirect_to relations_path, notice: 'Relation created'
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @relation.update(relation_params)
+    redirect_to relations_path, notice: 'Relation updated'
+  end
+
+  def destroy
+    @relation.destroy
+    redirect_to relations_path, notice: 'Relation deleted'
   end
 
   private
+
+  def set_relation
+    @relation = Relation.find(params[:id])
+  end
 
   def relation_params
     params.require(:relation).permit(:relation_type)
