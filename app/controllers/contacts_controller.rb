@@ -2,10 +2,24 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
 
   def index
-    @contacts = Contact.order(last_name: :asc)
+    @contacts = current_user.contacts.order(:last_name)
   end
 
   def show
+  end
+
+  def new
+    @contact = Contact.new
+  end
+
+  def create
+    @contact = Contact.new(contact_params)
+    @contact.user = current_user
+    if @contact.save
+      redirect_to contacts_path, notice: 'Contact created'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -28,6 +42,6 @@ class ContactsController < ApplicationController
   end
 
   def contact_params
-    params.require(:contact).permit(:first_name, :last_name, :phone_number, :address, :relations_type, :note)
+    params.require(:contact).permit(:first_name, :last_name, :phone_number, :address, :note, relation_ids: [])
   end
 end

@@ -1,0 +1,14 @@
+<div class="container">
+  <%= simple_form_for @contact do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :phone_number %>
+    <%= f.input :address %>
+    <%= f.input :birthday %>
+    <%= f.association :relations, collection: Relation.all, label_method: :relation_type, prompt: "Select relation", multiple: true %>
+    <%= f.input :note %>
+    <div>
+      <%= f.submit "OKay" %>
+    </div>
+  <% end %>
+</div>
