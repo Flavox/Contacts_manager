@@ -5,7 +5,7 @@
     <%= f.input :phone_number %>
     <%= f.input :address %>
     <%= f.input :birthday %>
-    <%= f.association :relations, collection: Relation.all, label_method: :relation_type, prompt: "Select relation", multiple: true %>
+    <%= f.association :relations, collection: current_user.relations, label_method: :relation_type, prompt: "Select relation", multiple: true %>
     <%= f.input :note %>
     <div>
       <%= f.submit "OKay" %>
