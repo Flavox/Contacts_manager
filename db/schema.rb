@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_15_201532) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_16_124112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_201532) do
     t.string "relation_type", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_relations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_15_201532) do
   add_foreign_key "contact_relations", "contacts"
   add_foreign_key "contact_relations", "relations"
   add_foreign_key "contacts", "users"
+  add_foreign_key "relations", "users"
 end

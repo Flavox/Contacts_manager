@@ -34,15 +34,18 @@ User.create(
 puts ':) 2 users created !'
 
 puts '! Creating relation types'
-Relation.create(
-  [
-    { relation_type: 'Friend' },
-    { relation_type: 'Pro' },
-    { relation_type: 'Family' },
-    { relation_type: 'Dating' },
-    { relation_type: 'School'}
-  ]
-)
+users = User.all
+users.each do |user|
+  Relation.create(
+    [
+      { relation_type: 'Friend', user_id: user.id },
+      { relation_type: 'Pro', user_id: user.id },
+      { relation_type: 'Family', user_id: user.id },
+      { relation_type: 'Dating', user_id: user.id },
+      { relation_type: 'School', user_id: user.id }
+    ]
+  )
+end
 puts ':) 4 types of relation created'
 
 puts '! Creating contacts'
@@ -55,8 +58,8 @@ puts '! Creating contacts'
     address: Faker::Address.full_address,
     birthday: Faker::Date.birthday(min_age: 8, max_age: 150),
     note: Faker::Quote.most_interesting_man_in_the_world
+    # user_id: user
   )
-
   dice = rand(1..100)
   case dice
   when 26..75
