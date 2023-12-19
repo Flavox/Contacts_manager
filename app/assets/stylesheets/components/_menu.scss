@@ -1,0 +1,14 @@
+.menu-radius {
+  border-radius: 15px;
+  background-color: grey;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.choice-menu {
+  color: whitesmoke;
+  letter-spacing: 1px;
+  font-size: larger;
+  &:hover {
+    color: grey;
+  }
+}

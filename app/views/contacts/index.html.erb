@@ -1,14 +1,27 @@
 <div class="container">
-  <h1>All your contacts (<%= @contacts.count %>)</h1>
-  <%= link_to '➕ Add new contact', new_contact_path %>
-
-  <ul>
-    <% @contacts.each do |contact| %>
-      <li>
-        <%= link_to contact_path(contact) do %>
-          <%= contact.first_name  %> <%= contact.last_name %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="position-relative">
+    <h1 class="position-absolute top-0 start-50 translate-middle-x mt-2 title">My contacts book (<%= @contacts.count %> contacts)</h1>
+    <br>
+    <div class="mt-4">
+      <%= link_to raw('<i class="fa-solid fa-user-plus"></i> Add new contact'), new_contact_path, class: "btn btn-grey", style: "margin-left: 10px;" %>
+      <br>
+      <% @contacts.each do |contact| %>
+        <div class="card contact-card position-relative">
+          <div class="btn-group dropup">
+            <button type="button" class="btn btn-secondary dropdown-toggle btn-grey" data-bs-toggle="dropdown" aria-expanded="false"></button>
+            <ul class="dropdown-menu menu-radius">
+              <li><%= link_to '🎨 Edit', edit_contact_path(contact), class: "dropdown-item choice-menu" %></li>
+              <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item choice-menu" %></li>
+            </ul>
+          </div>
+          <%= link_to contact_path(contact) do %>
+            <%= image_tag("photo_not_yet_available.jpg", class: "card-img-top", alt: "contact picture") %>
+            <div class="card-body">
+              <p class="card-text d-flex justify-content-center"><%= contact.first_name  %> <%= contact.last_name %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
