@@ -3,7 +3,7 @@
     <h1 class="position-absolute top-0 start-50 translate-middle-x mt-2 title">My contacts book (<%= @contacts.count %> contacts)</h1>
     <br>
     <div class="mt-4">
-      <%= link_to raw('<i class="fa-solid fa-user-plus"></i> Add new contact'), new_contact_path, class: "btn btn-grey", style: "margin-left: 10px;" %>
+      <%= link_to raw('<i class="fa-solid fa-user-plus" style="display: flex;flex-direction: column;"></i> Add new contact'), new_contact_path, class: "btn btn-grey", style: "margin-left: 10px;" %>
       <br>
       <% @contacts.each do |contact| %>
         <div class="card contact-card position-relative">
