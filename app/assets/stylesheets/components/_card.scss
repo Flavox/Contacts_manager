@@ -3,15 +3,22 @@
   margin: 10px;
   display: inline-block;
   border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  background-color: transparent;
+  a {
+    text-decoration: none;
+  }
 }
-
-// .card-img-top {
-//   position: relative;
-// }
 
 .contact-card img {
   width: 100%;
   height: auto;
   border-radius: 15px 15px 0 0;
+}
+
+.card-text {
+  font-family: 'Handlee', cursive;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: black;
 }
