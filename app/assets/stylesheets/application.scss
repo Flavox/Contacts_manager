@@ -10,4 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "contacts/index";
+
+// CSS for the entire website
+body {
+  background-image: asset-url('smooth-white-stucco-wall.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
