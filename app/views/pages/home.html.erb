@@ -1,4 +1,13 @@
-<h1>Hello !</h1>
-<%= link_to 'Contact list', contacts_path %>
-<%= link_to 'Relation type list', relations_path %>
-<%= cl_image_tag('sanfrancisco', width: 400, height: 300, crop: :fill) %>
+<div class="container mt-3">
+  <h1 style="font-family: 'Handlee', cursive;">Hello !</h1>
+  <%= link_to 'Contacts list', contacts_path %> <br>
+  <%= link_to 'Change your relationship type list', relations_path %> <br><br>
+  <p>The developer tests the display of this picture 😥</p>
+  <%= cl_image_tag('sanfrancisco', width: 400, height: 300, crop: :fill) %> <br>
+  <p>He would like to :</p>
+  <ul>
+    <li>add the function for a user to edit his profile </li>
+    <li>improving the style of contact details</li>
+    <li>improving the style of the contact list</li>
+  </ul>
+</div>
