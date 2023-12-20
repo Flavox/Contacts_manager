@@ -15,7 +15,11 @@
             </ul>
           </div>
           <%= link_to contact_path(contact) do %>
-            <%= image_tag("photo_not_yet_available.jpg", class: "card-img-top", alt: "contact picture") %>
+            <% if contact.photo.attached? %>
+              <%= cl_image_tag contact.photo.key, height: 450, width: 450, crop: :fill %>
+            <% else %>
+              <%= image_tag("photo_not_yet_available.jpg", class: "card-img-top", alt: "contact picture") %>
+            <% end %>
             <div class="card-body">
               <p class="card-text d-flex justify-content-center"><%= contact.first_name  %> <%= contact.last_name %></p>
             </div>
