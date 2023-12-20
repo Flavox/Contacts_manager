@@ -1,5 +1,8 @@
 <div class="container">
   <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
+  <% if @contact.photo.attached? %>
+    <%= cl_image_tag @contact.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <div class='d-flex gap-2'>
     <p class='fw-bold'>Phone number :</p><%= @contact.phone_number %>
   </div>
