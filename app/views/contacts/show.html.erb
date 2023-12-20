@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
   <h1><%= @contact.first_name %> <%= @contact.last_name %></h1>
   <% if @contact.photo.attached? %>
     <%= cl_image_tag @contact.photo.key, height: 300, width: 400, crop: :fill %>
