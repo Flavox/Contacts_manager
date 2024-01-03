@@ -1,5 +1,5 @@
 class RelationsController < ApplicationController
-before_action :set_relation, only: %i[edit update destroy]
+  before_action :set_relation, only: %i[edit update destroy]
 
   def index
     @relations = current_user.relations
@@ -13,7 +13,7 @@ before_action :set_relation, only: %i[edit update destroy]
     @relation = Relation.new(relation_params)
     @relation.user = current_user
     if @relation.save
-      redirect_to relations_path, notice: 'Relation created'
+      redirect_to edit_user_registration_path, notice: 'Relation created'
     else
       render :new
     end
@@ -24,12 +24,12 @@ before_action :set_relation, only: %i[edit update destroy]
 
   def update
     @relation.update(relation_params)
-    redirect_to relations_path, notice: 'Relation updated'
+    redirect_to edit_user_registration_path, notice: 'Relation updated'
   end
 
   def destroy
     @relation.destroy
-    redirect_to relations_path, notice: 'Relation deleted'
+    redirect_to edit_user_registration_path, notice: 'Relation deleted'
   end
 
   private

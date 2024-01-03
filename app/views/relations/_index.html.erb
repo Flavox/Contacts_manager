@@ -1,9 +1,9 @@
 <div class="container mt-3">
-  <h1>All your relation types (<%= @relations.count %>)</h1>
+  <h1>All your relation types (<%= relations.size %>)</h1>
   <%= link_to '➕ Add new relation', new_relation_path %>
 
   <ul>
-    <% @relations.each do |relation| %>
+    <% relations.each do |relation| %>
       <li>
         <%= relation.relation_type %>
         <%= link_to '🎨 Edit', edit_relation_path(relation) %>
