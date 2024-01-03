@@ -20,6 +20,10 @@ Bundler.require(*Rails.groups)
 
 module ContactsManager
   class Application < Rails::Application
+
+    # config.autoload_paths << "#{Rails.root}/app/models"
+    # config.autoload_paths += Dir["#{config.root}/app/models/**/"]
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
