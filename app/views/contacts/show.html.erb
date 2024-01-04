@@ -28,9 +28,9 @@
   </div>
   <br>
   <div class='gap-3'>
-    <%= link_to '🎨 Edit', edit_contact_path(@contact) %>
-    <%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    <%= link_to '🎨 Edit', edit_contact_path(@contact), class:'link' %>
+    <%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class:'link' %>
   </div>
   <br><br>
-  <%= link_to '⏪ Back', contacts_path %>
+  <%= link_to '⏪ Back', contacts_path, class:'link' %>
 </div>
