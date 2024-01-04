@@ -13,14 +13,14 @@
     </div>
   </div>
 
-  <div class="<%= 'd-flex gap-3' if @contact.photo.attached? %>">
-    <div class="image mt-3">
+  <div class="<%= 'd-flex gap-4' if @contact.photo.attached? %>">
+    <div class="image mt-5">
       <% if @contact.photo.attached? %>
         <%= cl_image_tag @contact.photo.key, gravity: :face, height: 400, width: 400, crop: :fill, style: 'border-radius: 15px;' %>
       <% end %>
     </div>
 
-    <div class="infos mt-3">
+    <div class="infos mt-5">
       <div class='d-flex align-items-baseline mt-3 gap-3'>
         <p class='font-label'>Phone number :</p> <p class='font-input'><%= @contact.phone_number%></p>
       </div>
