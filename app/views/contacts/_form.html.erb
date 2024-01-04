@@ -1,15 +1,23 @@
-<div class="container mt-3 w-25">
-  <%= simple_form_for @contact do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :phone_number %>
-    <%= f.input :address %>
-    <%= f.input :birthday %>
-    <%= f.association :relations, collection: current_user.relations, label_method: :relation_type, prompt: "Select relation", multiple: true %>
-    <%= f.input :note %>
-    <div>
-      <%= f.submit "OKay" %>
+<div class="container mt-3 d-flex justify-content-center">
+  <%= simple_form_for @contact, html: { class: 'd-flex flex-column mt-3 gap-3' } do |f| %>
+    <div class='d-flex gap-3'>
+      <%= f.input :first_name, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+      <%= f.input :last_name, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+    </div>
+    <%= f.input :photo, as: :file, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+    <div class='d-flex gap-3'>
+      <%= f.input :phone_number, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+      <%= f.input :address, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+    </div>
+    <div class='d-flex gap-3'>
+      <%= f.input :birthday, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+      <%= f.association :relations, collection: current_user.relations, label_method: :relation_type, prompt: "Select relation",
+                                    multiple: true, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+    </div>
+    <%= f.input :note, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+    <div class="form-actions d-flex justify-content-center">
+      <%= button_tag(type: 'submit', class: 'btn btn-grey') do %>
+        <i class="fa-solid fa-check"></i> Okay
+      <% end %>
     </div>
   <% end %>
-</div>
