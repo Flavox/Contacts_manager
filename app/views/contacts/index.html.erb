@@ -4,28 +4,16 @@
     <br>
     <div class="mt-4">
       <%= link_to raw('<i class="fa-solid fa-user-plus" style="display: flex;flex-direction: column;"></i> Add new contact'), new_contact_path, class: "btn btn-grey", style: "margin-left: 10px;" %>
-      <br>
-      <% @contacts.each do |contact| %>
-        <div class="card contact-card position-relative">
-          <div class="btn-group dropup">
-            <button type="button" class="btn btn-lg dropdown-toggle btn-grey" data-bs-toggle="dropdown" aria-expanded="false"></button>
-            <ul class="dropdown-menu menu-radius">
-              <li><%= link_to '🎨 Edit', edit_contact_path(contact), class: "dropdown-item choice-menu link" %></li>
-              <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item choice-menu link" %></li>
-            </ul>
-          </div>
-          <%= link_to contact_path(contact) do %>
-            <% if contact.photo.attached? %>
-              <%= cl_image_tag contact.photo.key, gravity: :face, height: 450, width: 450, crop: :fill %>
-            <% else %>
-              <%= image_tag("photo_not_yet_available.jpg", class: "card-img-top", alt: "contact picture") %>
-            <% end %>
-            <div class="card-body">
-              <p class="card-text d-flex justify-content-center"><%= contact.first_name  %> <%= contact.last_name %></p>
-            </div>
-          <% end %>
-        </div>
+      <%= form_with url: contacts_path, method: :get, class: "d-flex gap-1 mb-3" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "",
+          placeholder: "Search a contact"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-grey" %>
       <% end %>
+      <br>
+      <%= render 'list', contacts: @contacts %>
     </div>
   </div>
 </div>
