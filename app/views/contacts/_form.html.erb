@@ -10,7 +10,7 @@
       <%= f.input :address, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
     </div>
     <div class='d-flex gap-3'>
-      <%= f.input :birthday, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
+      <%= f.input :birthday, as: :string, input_html: { data: { controller: 'datepicker' }, class: 'font-input'}, label_html: { class: 'font-label' } %>
       <%= f.association :relations, collection: current_user.relations, label_method: :relation_type, prompt: "Select relation",
                                     multiple: true, input_html: { class: 'font-input'}, label_html: { class: 'font-label' } %>
     </div>

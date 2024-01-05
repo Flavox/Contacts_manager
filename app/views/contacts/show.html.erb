@@ -26,11 +26,11 @@
       </div>
 
       <div class='d-flex align-items-baseline mt-3 gap-3'>
-        <p class='font-label'>Address :</p> <p class='font-input'><%= @contact.address %></p>
+        <p class='font-label'>Address :</p> <p class='font-input'><%= simple_format(@contact.address, class: 'font-input') %></p>
       </div>
 
       <div class='d-flex align-items-baseline mt-3 gap-3'>
-        <p class='font-label'>Date of birth :</p> <p class='font-input'><%= @contact.birthday %></p>
+        <p class='font-label'>Date of birth :</p> <p class='font-input'><%= @contact.birthday.strftime('%b %e, %Y') %></p>
         <p class='font-label'>Relationship :</p>
         <ul>
           <% @contact.relations.each do |relation| %>
@@ -41,7 +41,7 @@
 
       <div class='d-flex flex-column mt-3 gap-1'>
         <p class='font-label'>Personal notes :</p>
-        <p class='font-input'> <%= @contact.note %></p>
+        <p class='font-input'> <%= simple_format(@contact.note, class: 'font-input') %></p>
       </div>
     </div>
   </div>
