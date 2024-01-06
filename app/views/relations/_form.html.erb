@@ -1,6 +1,6 @@
 <div class="container mt-3 w-25">
   <%= simple_form_for @relation do |f| %>
-    <%= f.input :relation_type %>
+    <%= f.input :relation_type, input_html: { class: 'front-input'}, label_html: { class: 'font-label' } %>
     <div>
       <%= f.submit "OKay" %>
     </div>
