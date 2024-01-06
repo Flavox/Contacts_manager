@@ -13,7 +13,9 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Resend unlock instructions" %>
+      <%= button_tag(type: 'submit', class: 'btn btn-grey') do %>
+        <i class="fa-solid fa-check"></i> Resend unlock instructions
+      <% end %>
     </div>
   <% end %>
 

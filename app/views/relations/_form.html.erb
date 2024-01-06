@@ -2,7 +2,9 @@
   <%= simple_form_for @relation do |f| %>
     <%= f.input :relation_type, input_html: { class: 'front-input'}, label_html: { class: 'font-label' } %>
     <div>
-      <%= f.submit "OKay" %>
+      <%= button_tag(type: 'submit', class: 'btn btn-grey') do %>
+        <i class="fa-solid fa-check"></i> OKay
+      <% end %>
     </div>
   <% end %>
 </div>
