@@ -21,7 +21,9 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Change my password" %>
+      <%= button_tag(type: 'submit', class: 'btn btn-grey') do %>
+        <i class="fa-solid fa-check"></i> Change my password
+      <% end %>
     </div>
   <% end %>
 
