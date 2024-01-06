@@ -6,7 +6,7 @@
       <div class="d-flex justify-content-between align-items-center">
         <%= link_to raw('<i class="fa-solid fa-user-plus" style="display: flex;flex-direction: column;"></i> Add new contact'), new_contact_path, class: "btn btn-grey", style: "margin-left: 10px;" %>
         <%= form_tag contacts_path, method: :get, class: "d-flex gap-1", style: "margin-right: 15px;" do %>
-          <%= text_field_tag :query, params[:query], class: "form-control font-input", placeholder: "Search a contact" %>
+          <%= text_field_tag :query, params[:query], class: "form-control front-input", placeholder: "Search a contact" %>
           <%= button_tag type: 'submit', class: 'btn btn-grey h-25' do %>
             <i class="fa-solid fa-magnifying-glass"></i>
           <% end %>
