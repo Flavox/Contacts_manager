@@ -22,26 +22,26 @@
 
     <div class="infos mt-5">
       <div class='d-flex align-items-baseline mt-3 gap-3'>
-        <p class='font-label'>Phone number :</p> <p class='front-input'><%= @contact.phone_number%></p>
+        <p class='font-label'>Phone number :</p> <p class='text'><%= @contact.phone_number%></p>
       </div>
 
       <div class='d-flex align-items-baseline mt-3 gap-3'>
-        <p class='font-label'>Address :</p> <p class='front-input'><%= simple_format(@contact.address, class: 'front-input') %></p>
+        <p class='font-label'>Address :</p> <p class='text'><%= simple_format(@contact.address, class: 'text') %></p>
       </div>
 
       <div class='d-flex align-items-baseline mt-3 gap-3'>
-        <p class='font-label'>Date of birth :</p> <p class='front-input'><%= @contact.birthday.strftime('%b %e, %Y') %></p>
+        <p class='font-label'>Date of birth :</p> <p class='text'><%= @contact.birthday.strftime('%b %e, %Y') %></p>
         <p class='font-label'>Relationship :</p>
         <ul>
           <% @contact.relations.each do |relation| %>
-            <li class='front-input'><%= relation.relation_type %></li>
+            <li class='text'><%= relation.relation_type %></li>
           <% end %>
         </ul>
       </div>
 
       <div class='d-flex flex-column mt-3 gap-1'>
         <p class='font-label'>Personal notes :</p>
-        <p class='front-input'> <%= simple_format(@contact.note, class: 'front-input') %></p>
+        <p class='text'> <%= simple_format(@contact.note, class: 'text') %></p>
       </div>
     </div>
   </div>
