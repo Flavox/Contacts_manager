@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "source" ]
+  static targets = [ "source", "notice", "btn" ]
 
   copy(event) {
     event.preventDefault();
@@ -11,5 +11,7 @@ export default class extends Controller {
 
     console.log(concatenatedText);
     navigator.clipboard.writeText(concatenatedText);
+    this.noticeTarget.innerHTML = "Copied !";
+    this.noticeTarget.disabled = 'true';
   }
 }
