@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: %i[show edit update destroy]
+  before_action :check_owner, only: %i[show edit update destroy]
 
   def index
     @contacts = current_user.contacts.order(:last_name)
@@ -41,6 +42,13 @@ class ContactsController < ApplicationController
   end
 
   private
+
+  def check_owner
+    unless @contact.user == current_user
+      flash[:alert] = "This contact is not yours."
+      redirect_back fallback_location: root_path
+    end
+  end
 
   def set_contact
     @contact = Contact.find(params[:id])
