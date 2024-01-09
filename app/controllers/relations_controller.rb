@@ -1,6 +1,6 @@
 class RelationsController < ApplicationController
-  before_action :set_relation, only: %i[edit update destroy]
-  before_action :check_owner, only: %i[edit update destroy]
+  before_action :set_relation, only: %i[show edit update destroy]
+  before_action :check_owner, only: %i[show edit update destroy]
 
   def index
     @relations = current_user.relations

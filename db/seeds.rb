@@ -63,10 +63,10 @@ puts '! Creating contacts'
   dice = rand(1..100)
   case dice
   when 26..75
-    contact.relations << Relation.all.sample
+    contact.relations << user.relations.sample
   when 76..100
-    contact.relations << Relation.all.sample
-    contact.relations << Relation.all.sample
+    contact.relations << user.relations.sample
+    contact.relations << user.relations.sample
   end
 end
 puts ':) 50 contacts created !'
