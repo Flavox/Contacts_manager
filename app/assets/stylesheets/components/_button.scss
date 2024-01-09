@@ -8,6 +8,21 @@
   font-size: 1.3rem;
 }
 
+.btn-grey-square {
+  background-color: gray;
+  color: whitesmoke;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family: 'Handlee', cursive;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44.334px;
+  width: 44.334px;
+}
+
 .btn-group {
   position: absolute;
   top: 70%;

@@ -1,7 +1,7 @@
 <% @contacts.each do |contact| %>
   <div class="card contact-card position-relative">
     <div class="btn-group dropup">
-      <button type="button" class="btn btn-lg dropdown-toggle btn-grey" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <button type="button" class="btn dropdown-toggle btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
       <ul class="dropdown-menu menu-radius">
         <li><%= link_to '🎨 Edit', edit_contact_path(contact), class: "dropdown-item choice-menu link" %></li>
         <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item choice-menu link" %></li>
