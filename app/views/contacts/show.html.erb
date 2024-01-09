@@ -4,7 +4,7 @@
     <div class="card-text position-absolute top-0 start-50 translate-middle-x d-flex mt-2 gap-3">
       <h1 class='title'><%= @contact.first_name %> <%= @contact.last_name %></h1>
       <div class="dropdown">
-        <button type="button" class="btn dropdown-toggle btn-grey d-flex h-75 align-items-center" data-bs-toggle="dropdown" aria-expanded="false"></button>
+        <button type="button" class="btn btn-grey-square dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false"></button>
         <ul class="dropdown-menu menu-radius">
           <li><%= link_to '🎨 Edit', edit_contact_path(@contact), class: "dropdown-item choice-menu link" %></li>
           <li><%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{@contact.first_name} ?" }, class: "dropdown-item choice-menu link" %></li>
@@ -24,19 +24,19 @@
       <div data-controller="clipboard" class='d-flex align-items-baseline mt-3 gap-3'>
         <p class='font-label'>Phone number :</p>
         <p data-clipboard-target="source" class='text'><%= @contact.phone_number %></p>
-        <button data-action="clipboard#copy" class='btn btn-grey'><i class="fa-regular fa-clipboard"></i></button>
+        <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
       </div>
 
       <div data-controller="clipboard" class='d-flex align-items-baseline mt-3 gap-3'>
         <p class='font-label'>Address :</p>
-        <p><%= simple_format(@contact.address, data: { clipboard_target: "source" }, class: 'text') %></p>
-        <button data-action="clipboard#copy" class='btn btn-grey'><i class="fa-regular fa-clipboard"></i></button>
+        <%= simple_format(@contact.address, data: { clipboard_target: "source" }, class: 'text') %>
+        <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
       </div>
 
       <div data-controller="clipboard" class='d-flex align-items-baseline mt-3 gap-3'>
         <p class='font-label'>Date of birth :</p>
         <p data-clipboard-target="source" class='text'><%= @contact.birthday.strftime('%b %e, %Y') if @contact.birthday%></p>
-        <button data-action="clipboard#copy" class='btn btn-grey'><i class="fa-regular fa-clipboard"></i></button>
+        <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
         <p class='font-label'>Relationship :</p>
         <ul>
           <% @contact.relations.each do |relation| %>
@@ -48,7 +48,7 @@
       <div data-controller="clipboard" class='d-flex flex-column mt-3'>
         <p class='font-label'>Personal notes :</p>
         <%= simple_format(@contact.note, data: { clipboard_target: "source" }, class: 'text') %>
-        <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
+        <button data-action="clipboard#copy" data-clipboard-target='notice' class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
           <p class='mb-0'>Copy</p>
           <i class="fa-regular fa-clipboard"></i>
         </button>

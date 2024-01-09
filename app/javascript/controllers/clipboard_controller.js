@@ -1,17 +1,35 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "source", "notice", "btn" ]
+  static targets = [ "source", "button", "notice" ];
+
+  resetCopiedState() {
+    const elementsWithCopiedClass = document.querySelectorAll("[data-clipboard-target='button']");
+    const noticeTarget = document.querySelector("[data-clipboard-target='notice']");
+
+    elementsWithCopiedClass.forEach(element => {
+      element.innerHTML = "<i class='fa-regular fa-clipboard'></i>";
+    });
+
+    noticeTarget.innerHTML = "Copy <i class='fa-regular fa-clipboard'></i>";
+  }
 
   copy(event) {
     event.preventDefault();
+    this.resetCopiedState();
 
     const textContentArray = this.sourceTargets.map(target => target.innerText);
     const concatenatedText = textContentArray.join('\n\n');
 
     console.log(concatenatedText);
     navigator.clipboard.writeText(concatenatedText);
-    this.noticeTarget.innerHTML = "Copied !";
-    this.noticeTarget.disabled = 'true';
+
+    if (this.hasButtonTarget) {
+      this.buttonTarget.innerHTML = "<i class='fa-regular fa-circle-check'></i>";
+    }
+
+    if (this.hasNoticeTarget) {
+      this.noticeTarget.innerHTML = "Copied ! <i class='fa-regular fa-circle-check'></i>";
+    }
   }
 }
