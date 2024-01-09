@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   resources :contacts
-  resources :relations, only: %i[new create edit update destroy]
+  resources :relations, only: %i[show new create edit update destroy]
 end

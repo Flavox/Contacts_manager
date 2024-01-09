@@ -1,8 +1,11 @@
 class RelationsController < ApplicationController
-  before_action :set_relation, only: %i[edit update destroy]
+  before_action :set_relation, only: %i[show edit update destroy]
 
   def index
     @relations = current_user.relations
+  end
+
+  def show
   end
 
   def new

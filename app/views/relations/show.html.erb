@@ -1,0 +1,10 @@
+<h1><%= @relation.relation_type %></h1>
+<% @relation.contacts.each do |contact| %>
+  <ul>
+    <li>
+      <%= link_to contact_path(contact), class: 'nav-link' do %>
+        <%= contact.first_name %> <%= contact.last_name %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
