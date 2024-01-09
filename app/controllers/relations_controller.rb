@@ -1,5 +1,6 @@
 class RelationsController < ApplicationController
   before_action :set_relation, only: %i[edit update destroy]
+  before_action :check_owner, only: %i[edit update destroy]
 
   def index
     @relations = current_user.relations
@@ -33,6 +34,13 @@ class RelationsController < ApplicationController
   end
 
   private
+
+  def check_owner
+    unless @relation.user == current_user
+      flash[:alert] = "This relationship is not yours."
+      redirect_back fallback_location: root_path
+    end
+  end
 
   def set_relation
     @relation = Relation.find(params[:id])
