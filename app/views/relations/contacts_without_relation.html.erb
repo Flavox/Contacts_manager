@@ -1,6 +1,6 @@
 <div class="container mt-3">
   <div class="position-relative">
-    <h1 class="position-absolute top-0 start-50 translate-middle-x mt-2 title"><%= @relation.relation_type %> (<%= @relation.contacts.count %>)</h1>
+    <h1 class="position-absolute top-0 start-50 translate-middle-x mt-2 title">Contacts without relationship defined (<%= @contacts_without_relation.count %> contacts)</h1>
     <br>
     <div class="mt-4" data-controller='auto-search'>
       <div class="d-flex justify-content-between align-items-center">
@@ -13,7 +13,7 @@
         <% end %>
       </div>
       <br>
-      <%= render 'contacts/list', contacts: @relation.contacts %>
+      <%= render 'contacts/list', contacts: @contacts_without_relation %>
     </div>
   </div>
 </div>

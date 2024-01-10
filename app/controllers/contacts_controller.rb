@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
     @contacts = Contact.search_by_name(params[:query]) if params[:query].present?
     respond_to do |format|
       format.html
-      format.text { render partial: 'list', locals: { contacts: @contacts }, formats: [:html] }
+      format.text { render partial: 'contacts/list', locals: { contacts: @contacts }, formats: [:html] }
     end
   end
 

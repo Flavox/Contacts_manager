@@ -1,7 +1,7 @@
   <%# Settings page %>
 
 <div class="container mt-3 d-flex justify-content-evenly">
-  <%= render 'relations/index', relations: current_user.relations %>
+  <%= render 'relations/index', relations: @relations, contacts_without_relation: @contacts_without_relation %>
 
   <div class='mt-3 w-25 d-flex flex-column align-items-center'>
     <h1 class='title'>Your account<%= ", #{current_user.first_name}" if current_user.first_name.present? %></h1>

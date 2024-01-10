@@ -15,10 +15,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   @relations = current_user.relations
-  #   super
-  # end
+  def edit
+    @relations = current_user.relations
+    @mycontacts = current_user.contacts
+    @contacts_without_relation = @mycontacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
+  end
 
   # PUT /resource
   # def update
