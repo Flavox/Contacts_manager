@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = current_user.contacts.order(:last_name)
-    @contacts = Contact.search_by_name(params[:query]) if params[:query].present?
+    @contacts = @contacts.search_by_name(params[:query]) if params[:query].present?
     respond_to do |format|
       format.html
       format.text { render partial: 'contacts/list', locals: { contacts: @contacts }, formats: [:html] }
