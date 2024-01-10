@@ -2,13 +2,9 @@ class RelationsController < ApplicationController
   before_action :set_relation, only: %i[show edit update destroy]
   before_action :check_owner, only: %i[show edit update destroy]
 
-  # def index
-    # @relations = current_user.relations
-    # @mycontacts = current_user.contacts
-    # @contacts_without_relation = @mycontacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
-  # end
-
   def show
+    @contacts = @relation.contacts
+    search_module
   end
 
   def new
@@ -39,12 +35,20 @@ class RelationsController < ApplicationController
   end
 
   def contacts_without_relation
-    @mycontacts = current_user.contacts
-    @contacts_without_relation = @mycontacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
+    @contacts = current_user.contacts
+    @contacts = @contacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
+    search_module
   end
 
   private
 
+  def search_module
+    @contacts = @contacts.search_by_name(params[:query]) if params[:query].present?
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'contacts/list', locals: { contacts: @contacts }, formats: [:html] }
+    end
+  end
 
   def check_owner
     unless @relation.user == current_user
