@@ -1,9 +1,14 @@
 class RelationsController < ApplicationController
-  before_action :set_relation, only: %i[edit update destroy]
-  before_action :check_owner, only: %i[edit update destroy]
+  before_action :set_relation, only: %i[show edit update destroy]
+  before_action :check_owner, only: %i[show edit update destroy]
 
-  def index
-    @relations = current_user.relations
+  # def index
+    # @relations = current_user.relations
+    # @mycontacts = current_user.contacts
+    # @contacts_without_relation = @mycontacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
+  # end
+
+  def show
   end
 
   def new
@@ -33,7 +38,13 @@ class RelationsController < ApplicationController
     redirect_to edit_user_registration_path, notice: 'Relation deleted'
   end
 
+  def contacts_without_relation
+    @mycontacts = current_user.contacts
+    @contacts_without_relation = @mycontacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
+  end
+
   private
+
 
   def check_owner
     unless @relation.user == current_user

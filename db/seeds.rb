@@ -46,7 +46,7 @@ users.each do |user|
     ]
   )
 end
-puts ':) 4 types of relation created'
+puts ':) 5 types of relation created'
 
 puts '! Creating contacts'
 50.times do
@@ -58,15 +58,14 @@ puts '! Creating contacts'
     address: Faker::Address.full_address,
     birthday: Faker::Date.birthday(min_age: 8, max_age: 150),
     note: Faker::Quote.most_interesting_man_in_the_world
-    # user_id: user
   )
   dice = rand(1..100)
   case dice
   when 26..75
-    contact.relations << Relation.all.sample
+    contact.relations << user.relations.sample
   when 76..100
-    contact.relations << Relation.all.sample
-    contact.relations << Relation.all.sample
+    contact.relations << user.relations.sample
+    contact.relations << user.relations.sample
   end
 end
 puts ':) 50 contacts created !'
