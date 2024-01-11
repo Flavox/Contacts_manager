@@ -12,10 +12,12 @@
         <%= link_to '💣', relation_path(relation), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{relation.relation_type} ? It will also be deleted from the contact records." }, class:'link col-2'  %>
       </li>
     <% end %>
-    <li class="card-text row">
-      <%= link_to contacts_without_relation_relations_path, class:'nav-link' do %>
-        <%= "Undefined relationships  (#{contacts_without_relation.count})" %>
-      <% end %>
-    </li>
+    <% if contacts_without_relation.present? %>
+      <li class="card-text row">
+        <%= link_to contacts_without_relation_relations_path, class:'nav-link' do %>
+          <%= "Undefined relationships  (#{contacts_without_relation.count})" %>
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </div>
