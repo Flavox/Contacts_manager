@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :set_user, only: %i[edit update]
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -22,9 +24,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @user.update(user_params)
+    redirect_to edit_user_registration_path, notice: 'Account updated'
+  end
 
   # DELETE /resource
   # def destroy
@@ -40,7 +43,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+
+  def set_user
+    @user = current_user
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :photo, :email, :encrypted_password)
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
