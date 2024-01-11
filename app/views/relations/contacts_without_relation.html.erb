@@ -4,7 +4,7 @@
     <br>
     <div class="mt-4" data-controller='auto-search'>
       <div class="d-flex justify-content-between align-items-center">
-        <%= link_to raw('<i class="fa-solid fa-user-plus" style="display: flex;flex-direction: column;"></i> Add new contact'), new_contact_path, class: "btn btn-grey", style: "margin-left: 10px;" %>
+        <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), edit_user_registration_path, class:'btn btn-grey me-auto d-flex align-items-center gap-2', rel: 'prefetch' %>
         <%= form_tag contacts_path, method: :get, class: "d-flex gap-1", style: "margin-right: 15px;" do %>
           <%= text_field_tag :query, params[:query], data: { action: 'keyup->auto-search#update', auto_search_target: 'input' }, class: "form-control front-input", placeholder: "Search by name, address..." %>
           <%= button_tag type: 'button', class: 'btn btn-grey-square' do %>
