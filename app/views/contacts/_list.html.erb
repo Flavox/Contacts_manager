@@ -1,5 +1,5 @@
 <div data-auto-search-target="list">
-  <% if contacts.count > 0 %>
+  <% if contacts.present? %>
     <% contacts.each do |contact| %>
       <div class="card contact-card position-relative">
         <div class="btn-group dropup">
