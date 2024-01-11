@@ -22,8 +22,6 @@ class RelationsController < ApplicationController
   end
 
   def edit
-    # @mycontacts = current_user.contacts
-    # @contacts_without_relation = @mycontacts.left_outer_joins(:contact_relations).where(contact_relations: { id: nil })
   end
 
   def update
