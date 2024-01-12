@@ -13,9 +13,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do
       if resource.errors.empty?
+        # flash[:notice] = "This contact is not yours."
         redirect_to edit_user_registration_path, notice: "Account created successfully."
       else
-        redirect_to edit_user_registration_path, notice: "Error with some field"
+        redirect_to edit_user_registration_path, alert: "Error with some field"
       end
       return
     end
@@ -34,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if resource.errors.empty?
         redirect_to edit_user_registration_path, notice: "Account updated successfully."
       else
-        redirect_to edit_user_registration_path, notice: "Do you entered your password correctly "
+        redirect_to edit_user_registration_path, alert: "Do you entered your password correctly ?"
       end
       return
     end
@@ -55,10 +56,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   protected
-
-  # def user_params
-  #   params.require(:user).permit(:first_name, :last_name, :photo, :email, :current_password, :password, :encrypted_password, :password_confirmation)
-  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
