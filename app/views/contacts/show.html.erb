@@ -47,9 +47,9 @@
 
       <div data-controller="clipboard" class='d-flex flex-column mt-3'>
         <p class='font-label'>Personal notes :</p>
-        <div data-controller="read-more" class="add-read-more show-less-content" data-action="read_more#connect">
-          <%= simple_format(@contact.note, data: { read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more text') %>
-        </div>
+        <%# <div data-controller="read-more" class="add-read-more show-less-content" data-action="read_more#connect"> %>
+          <%= simple_format(@contact.note, data: { controller: 'read-more', action: 'read_more#connect', read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more show-less-content text') %>
+        <%# </div> %>
         <button data-action="clipboard#copy" data-clipboard-target='notice' class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
           <p class='mb-0'>Copy</p>
           <i class="fa-regular fa-clipboard"></i>
@@ -58,5 +58,3 @@
     </div>
   </div>
 </div>
-
-          <%# <%= simple_format(@contact.note, data: { read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more text') %> %>
