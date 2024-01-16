@@ -19,7 +19,7 @@ export default class extends Controller {
 
     const textContentArray = this.sourceTargets.map(target => target.innerText);
     let concatenatedText = textContentArray.join('\n\n');
-    const specificText = "read less ";
+    const specificText = " read less ";
     concatenatedText = concatenatedText.replace(new RegExp(specificText + "$"), "");
 
     console.log(concatenatedText);
