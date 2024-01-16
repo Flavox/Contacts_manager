@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to edit_user_registration_path, notice: "Account created successfully."
       else
         redirect_to edit_user_registration_path, alert: "Error with some field"
+        puts "ERROR from registration_controller - #{current_user}: #{resource.errors}"
       end
       return
     end
@@ -36,6 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to edit_user_registration_path, notice: "Account updated successfully."
       else
         redirect_to edit_user_registration_path, alert: "Do you entered your password correctly ?"
+        puts "#{current_user}: #{resource.errors}"
       end
       return
     end
