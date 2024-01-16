@@ -13,7 +13,7 @@ export default class extends Controller {
       const secdHalf = allstr.substring(carLmt, allstr.length);
       const htmlToAdd = `
       ${firstSet}<span data-target="more" class='second-section'>${secdHalf}</span>
-      <span data-action='click->read-more#toggle' data-target='more' class='read-more' title='Click to show more'>${readMoreTxt}</span>
+      <span data-action='click->clipboard#resetCopiedState && click->read-more#toggle' data-target='more' class='read-more' title='Click to show more'>${readMoreTxt}</span>
       <span data-action='click->read-more#toggle' class='read-less' title='Click to show less'>${readLessTxt}</span>`;
       this.textTarget.innerHTML = htmlToAdd;
     }
