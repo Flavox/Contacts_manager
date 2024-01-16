@@ -6,9 +6,8 @@ export default class extends Controller {
   resetCopiedState() {
     const elementsWithCopiedClass = document.querySelectorAll("[data-clipboard-target='button']");
     const noticeTarget = document.querySelector("[data-clipboard-target='notice']");
-
-    elementsWithCopiedClass.forEach(element => {
-      element.innerHTML = "<i class='fa-regular fa-clipboard'></i>";
+    elementsWithCopiedClass.forEach(btn => {
+      btn.innerHTML = "<i class='fa-regular fa-clipboard'></i>";
     });
 
     noticeTarget.innerHTML = "Copy <i class='fa-regular fa-clipboard'></i>";
@@ -20,7 +19,7 @@ export default class extends Controller {
 
     const textContentArray = this.sourceTargets.map(target => target.innerText);
     let concatenatedText = textContentArray.join('\n\n');
-    const specificText = " read less";
+    const specificText = "read less ";
     concatenatedText = concatenatedText.replace(new RegExp(specificText + "$"), "");
 
     console.log(concatenatedText);
