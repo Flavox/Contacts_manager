@@ -13,11 +13,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super do
       if resource.errors.empty?
-        # flash[:notice] = "This contact is not yours."
-        redirect_to edit_user_registration_path, notice: "Account created successfully."
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        respond_with resource, location: edit_user_registration_path
       else
-        redirect_to edit_user_registration_path, alert: "Error with some field"
-        puts "ERROR from registration_controller - #{current_user}: #{resource.errors}"
+        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+        puts "--------ERROR from registration_controller - create user : #{resource.errors.full_messages[0]}"
       end
       return
     end
@@ -36,8 +37,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if resource.errors.empty?
         redirect_to edit_user_registration_path, notice: "Account updated successfully."
       else
-        redirect_to edit_user_registration_path, alert: "Do you entered your password correctly ?"
-        puts "#{current_user}: #{resource.errors}"
+        clean_up_passwords resource
+        set_minimum_password_length
+        redirect_to edit_user_registration_path, notice: resource.errors.full_messages[0]
+        puts "--------ERROR from registration_controller - user #{current_user.id}: #{resource.errors.full_messages[0]}"
       end
       return
     end
