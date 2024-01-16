@@ -19,7 +19,9 @@ export default class extends Controller {
     this.resetCopiedState();
 
     const textContentArray = this.sourceTargets.map(target => target.innerText);
-    const concatenatedText = textContentArray.join('\n\n');
+    let concatenatedText = textContentArray.join('\n\n');
+    const specificText = " read less";
+    concatenatedText = concatenatedText.replace(new RegExp(specificText + "$"), "");
 
     console.log(concatenatedText);
     navigator.clipboard.writeText(concatenatedText);
