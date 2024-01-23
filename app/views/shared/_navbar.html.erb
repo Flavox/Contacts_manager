@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light margin-navbar">
   <div class="container">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "directory.jpg" %>
@@ -9,7 +9,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto d-flex align-items-center">
         <% if user_signed_in? %>
           <li class='nav-item active'>
             <%= link_to "Add contact", new_contact_path, class: "nav-link" %>
@@ -17,7 +17,7 @@
           <li class="nav-item active">
             <%= link_to "Contacts book", contacts_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown d-flex">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key, class: 'avatar', aspect_ratio: "1.0", gravity: :face, zoom: '0.75', crop: :crop %>
