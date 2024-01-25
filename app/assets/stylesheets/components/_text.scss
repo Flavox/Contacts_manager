@@ -1,6 +1,7 @@
 .title {
   font-family: 'Kaushan Script', cursive;
   text-align: center;
+  color: black;
 }
 
 .text {
@@ -20,6 +21,6 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.link {
-  text-decoration: none;
+.no-underline {
+  text-decoration-line: none;
 }

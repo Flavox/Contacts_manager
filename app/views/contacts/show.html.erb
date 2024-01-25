@@ -6,8 +6,8 @@
       <div class="dropdown">
         <button type="button" class="btn btn-grey-square dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false"></button>
         <ul class="dropdown-menu menu-radius">
-          <li><%= link_to '🎨 Edit', edit_contact_path(@contact), class: "dropdown-item choice-menu link" %></li>
-          <li><%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{@contact.first_name} ?" }, class: "dropdown-item choice-menu link" %></li>
+          <li><%= link_to '🎨 Edit', edit_contact_path(@contact), class: "dropdown-item choice-menu no-underline" %></li>
+          <li><%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{@contact.first_name} ?" }, class: "dropdown-item choice-menu no-underline" %></li>
         </ul>
       </div>
     </div>
