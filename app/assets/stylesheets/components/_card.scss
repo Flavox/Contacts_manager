@@ -19,3 +19,13 @@
   font-size: 1.4rem;
   color: black;
 }
+
+@media(max-width: 576px) {
+  .contact-card {
+    width: calc(33% - 19px);
+    height: 174.067px;
+  }
+  .card-body {
+    padding: 5px 12px;
+  }
+}
