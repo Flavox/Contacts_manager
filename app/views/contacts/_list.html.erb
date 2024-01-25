@@ -1,25 +1,27 @@
-<div data-auto-search-target="list">
+<div data-auto-search-target="list" class='d-flex flex-wrap'>
   <% if contacts.present? %>
     <% contacts.each do |contact| %>
-      <div class="card contact-card position-relative">
-        <div class="btn-group dropup">
-          <button type="button" class="btn dropdown-toggle btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
-          <ul class="dropdown-menu menu-radius">
-            <li><%= link_to '🎨 Edit', edit_contact_path(contact), class: "dropdown-item choice-menu no-underline" %></li>
-            <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item choice-menu no-underline" %></li>
-          </ul>
-        </div>
-        <%= link_to contact_path(contact) do %>
-          <% if contact.photo.attached? %>
-            <%= cl_image_tag contact.photo.key, gravity: :face, height: 450, width: 450, crop: :fill %>
-          <% else %>
-            <%= image_tag("photo_not_yet_available.jpg", class: "card-img-top", alt: "contact picture") %>
-          <% end %>
-          <div class="card-body">
-            <p class="card-text d-flex justify-content-center"><%= contact.first_name  %> <%= contact.last_name %></p>
-          </div>
-        <% end %>
-      </div>
+<div class="card contact-card">
+  <div class="btn-group dropup">
+    <button type="button" class="btn dropdown-toggle btn-grey-square transparant" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <ul class="dropdown-menu menu-radius">
+      <li><%= link_to '🎨 Edit', edit_contact_path(contact), class: "dropdown-item choice-menu no-underline" %></li>
+      <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item choice-menu no-underline" %></li>
+    </ul>
+  </div>
+  <%= link_to contact_path(contact) do %>
+    <% if contact.photo.attached? %>
+      <%= cl_image_tag contact.photo.key, gravity: :face, height: 450, width: 450, crop: :fill, class: "card-img-top" %>
+    <% else %>
+      <%= image_tag("photo_not_yet_available.jpg", class: "card-img-top", alt: "contact picture") %>
+    <% end %>
+    <div class="card-body d-flex justify-content-center">
+      <p class="card-text"><%= contact.first_name %> <%= contact.last_name %></p>
+    </div>
+  <% end %>
+</div>
+
+
     <% end %>
   <% else %>
     <h1 class='title mt-3'>No contacts found :(</h1>
