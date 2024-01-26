@@ -5,7 +5,8 @@
         class:'d-md-none btn btn-grey-square', rel: 'prefetch' %>
     <%# Bouton desktop %>
       <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), (request.referer || contacts_path),
-        class:'d-none d-md-flex btn btn-grey me-auto d-flex align-items-center', rel: 'prefetch' %>
+        class:'d-none d-md-flex btn btn-grey me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
+
     <div class="position-absolute top-0 start-50 translate-middle-x d-flex align-items-center gap-3 ms-4">
       <h1 class='title'><%= @contact.first_name %> <%= @contact.last_name %></h1>
       <div class="dropdown">
