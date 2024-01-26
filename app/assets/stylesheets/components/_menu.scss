@@ -5,10 +5,17 @@
 }
 
 .choice-menu {
+  font-family: 'Handlee', cursive;
   color: whitesmoke;
   letter-spacing: 1px;
   font-size: larger;
   &:hover {
     color: grey;
+  }
+}
+
+@media(max-width: 576px) {
+  .menu-radius {
+    background-color: rgba(128,128,128,0.7);
   }
 }
