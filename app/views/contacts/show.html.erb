@@ -19,15 +19,13 @@
   </div>
 
 <%# Mobile display : %>
-  <div class="d-md-none">
-    <div class="<%= 'container' if @contact.photo.attached? %>">
-      <div class="mt-5">
-        <% if @contact.photo.attached? %>
-          <%= cl_image_tag @contact.photo.key, gravity: :face, height: 400, width: 400, crop: :fill, class: "img-fluid", style: 'border-radius: 15px;' %>
-        <% end %>
-      </div>
+  <div class="d-md-none container">
+    <div class="<%= 'mt-5' if @contact.photo.attached? %>">
+      <% if @contact.photo.attached? %>
+        <%= cl_image_tag @contact.photo.key, gravity: :face, height: 400, width: 400, crop: :fill, class: "img-fluid", style: 'border-radius: 15px;' %>
+      <% end %>
 
-      <div class="infos mt-4">
+      <div class="infos mb-3 <%= @contact.photo.attached? ? "mt-4" : "mt-5" %>">
         <div data-controller="clipboard">
           <p class='font-label mt-1 mb-0'>Phone number :</p>
           <div class='d-flex align-items-baseline gap-3'>
@@ -69,7 +67,7 @@
           </div>
         </div>
 
-        <div data-controller="clipboard" class='d-flex flex-column mt-1 mb-3'>
+        <div data-controller="clipboard" class='d-flex flex-column mt-1'>
           <p class='font-label mb-0'>Personal notes :</p>
           <div class='d-flex flex-column gap-3 mt-1'>
             <%= simple_format(@contact.note, data: { controller: 'read-more', action: 'read_more#connect', read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more show-less-content text mb-0') %>
