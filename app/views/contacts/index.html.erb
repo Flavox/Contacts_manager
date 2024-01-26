@@ -2,8 +2,8 @@
   <div class="position-relative">
     <h1 class="position-absolute top-0 start-50 translate-middle-x title w-100">My contacts book (<%= @contacts.count %> contacts)</h1>
     <br>
-    <div class="mt-4" data-controller='auto-search'>
-      <div class="d-flex justify-content-between align-items-center gap-2">
+    <div data-controller='auto-search'>
+      <div class="d-flex justify-content-between align-items-center mt-4">
         <%# Bouton mobile%>
         <%= link_to raw('<i class="fa-solid fa-user-plus"></i>'), new_contact_path, class: "d-md-none btn btn-grey-square btn-add" %>
         <%# Bouton desktop%>
