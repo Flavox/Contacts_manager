@@ -1,10 +1,11 @@
 <div class="container mt-3">
   <div class="position-relative">
-    <h1 class="position-absolute top-0 start-50 translate-middle-x mt-2 title">My contacts book (<%= @contacts.count %> contacts)</h1>
+    <h1 class="position-absolute top-0 start-50 translate-middle-x title w-100">My contacts book (<%= @contacts.count %> contacts)</h1>
     <br>
     <div class="mt-4" data-controller='auto-search'>
-      <div class="d-flex justify-content-between align-items-center">
-        <%= link_to raw('<i class="fa-solid fa-user-plus" style="display: flex;flex-direction: column;"></i> Add new contact'), new_contact_path, class: "btn btn-grey" %>
+      <div class="d-flex justify-content-between align-items-center gap-2">
+        <%= link_to raw('<i class="fa-solid fa-user-plus"></i> Add new contact'), new_contact_path, class: "d-none d-md-flex btn btn-grey btn-add" %>
+        <%= link_to raw('<i class="fa-solid fa-user-plus"></i>'), new_contact_path, class: "d-md-none btn btn-grey-square btn-add" %>
         <%= form_tag contacts_path, method: :get, class: "d-flex gap-1" do %>
           <%= text_field_tag :query, params[:query], data: { action: 'keyup->auto-search#update', auto_search_target: 'input' }, class: "form-control front-input", placeholder: "Search by name, address..." %>
           <%= button_tag type: 'button', class: 'btn btn-grey-square' do %>

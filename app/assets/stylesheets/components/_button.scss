@@ -32,6 +32,11 @@
   font-family: 'Handlee', cursive;
 }
 
+.btn-add {
+  display: flex;
+  flex-direction: column;
+}
+
 .btn-danger {
   background-color: #D44147;
   color: whitesmoke;
