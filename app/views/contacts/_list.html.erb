@@ -3,10 +3,10 @@
     <% contacts.each do |contact| %>
 <div class="card contact-card">
   <div class="btn-group dropup">
-    <button type="button" class="btn dropdown-toggle btn-grey-square transparant" data-bs-toggle="dropdown" aria-expanded="false"></button>
+    <button type="button" class="dropdown-toggle btn btn-grey-square transparant" data-bs-toggle="dropdown" aria-expanded="false"></button>
     <ul class="dropdown-menu menu-radius">
       <li><%= link_to '🎨 Edit', edit_contact_path(contact), class: "dropdown-item choice-menu no-underline" %></li>
-      <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "dropdown-item choice-menu no-underline" %></li>
+      <li><%= link_to '💣 Delete', contact_path(contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{contact.first_name} ?" }, class: "dropdown-item choice-menu no-underline" %></li>
     </ul>
   </div>
   <%= link_to contact_path(contact) do %>
