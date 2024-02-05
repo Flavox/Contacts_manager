@@ -1,0 +1,2 @@
+class EastereggsController < ApplicationController
+end

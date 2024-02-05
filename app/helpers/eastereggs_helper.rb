@@ -1,0 +1,2 @@
+module EastereggsHelper
+end

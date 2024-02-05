@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "input", "list" ];
+  static targets = [ "input", "list", "hidden" ];
 
   connect() {
     this.element.addEventListener('submit', this.update.bind(this));
@@ -10,12 +10,18 @@ export default class extends Controller {
   update(event) {
     event.preventDefault()
 
-    const url = `${window.location.href}?query=${this.inputTarget.value}`;
+    const query = this.inputTarget.value;
+    const url = `${window.location.href}?query=${query}`;
 
-    fetch(url, { headers: { 'Accept': 'text/plain' } })
-      .then(response => response.text())
-      .then((data) => {
-        this.listTarget.outerHTML = data;
-      })
+    if (query.toLowerCase() === 'curriculum') {
+      this.hiddenTarget.classList.remove('d-none');
+    } else {
+      this.hiddenTarget.classList.add('d-none');
+      fetch(url, { headers: { 'Accept': 'text/plain' } })
+        .then(response => response.text())
+        .then((data) => {
+          this.listTarget.outerHTML = data;
+        });
+    }
   }
 }
