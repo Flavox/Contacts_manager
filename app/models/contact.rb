@@ -8,8 +8,10 @@ class Contact < ApplicationRecord
 
   validates :first_name, presence: true
 
-  pg_search_scope :search_by_name, against: %i[first_name last_name phone_number address birthday], ignoring: :accents,
-    using: {
-      tsearch: { prefix: true }
-    }
+  pg_search_scope :search_by_name,
+                  against: %i[first_name last_name phone_number address birthday],
+                  ignoring: :accents,
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end

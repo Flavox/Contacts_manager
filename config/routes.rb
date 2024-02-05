@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :relations, only: %i[show new create edit update destroy] do
     get 'contacts_without_relation', on: :collection
   end
+  get 'eastereggs/curriculum'
 end

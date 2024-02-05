@@ -1,0 +1,164 @@
+<%# ! Modals %>
+  <div class="modal fade" id="editModal" tabindex="+1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">This is my CV !</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>And no one can edit my life 😉</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sorry !</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="deleteModal" tabindex="+1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">This is my CV !</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>So please do not delete me 😨</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sorry !</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%# Common display (Header): %>
+  <div class="container mt-3 mb-3 d-flex flex-column align-items-center">
+    <div class='position-relative d-md-flex justify-content-evenly w-100 gap-3'>
+      <%# Bouton mobile %>
+        <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
+          class:'d-md-none btn btn-grey-square', rel: 'prefetch' %>
+      <%# Bouton desktop %>
+        <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), (request.referer || contacts_path),
+          class:'d-none d-md-flex btn btn-grey me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
+
+      <div class="position-absolute top-0 start-50 translate-middle-x d-flex align-items-center gap-3 ms-4">
+        <h1 class='title'>Flavien LERAY</h1>
+        <div class="dropdown">
+          <button type="button" class="dropdown-toggle btn btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
+          <ul class="dropdown-menu menu-radius">
+            <button type="button" class="dropdown-item choice-menu no-underline" data-bs-toggle="modal" data-bs-target="#editModal">
+              🎨 Edit
+            </button>
+            <button type="button" class="dropdown-item choice-menu no-underline" data-bs-toggle="modal" data-bs-target="#deleteModal">
+              💣 Delete
+            </button>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  <%# Mobile display : %>
+    <div class="d-md-none">
+      <div class="mt-5">
+        <%= image_tag("CV.jpg", gravity: :face, height: 400, width: 400, crop: :fill, class: "img-fluid", style: 'border-radius: 15px;',  alt: "contact picture") %>
+
+        <div class="infos mt-4">
+          <div data-controller="clipboard">
+            <p class='font-label mt-1 mb-0'>Phone number :</p>
+            <div class='d-flex align-items-baseline gap-3'>
+              <p data-clipboard-target="source" class='text'>(+33) 06 68 25 13 26</p>
+              <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
+            </div>
+          </div>
+
+          <div data-controller="clipboard">
+            <p class='font-label mt-1 mb-0'>Address :</p>
+            <div class='d-flex align-items-baseline gap-3'>
+              <p data-clipboard-target="source" class='text'>14 rue Maurice Boyau, 91220, <br>Bretigny-sur-Orge</p>
+              <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
+            </div>
+          </div>
+
+          <div data-controller="clipboard">
+            <p class='font-label mt-1 mb-0'>Date of birth :</p>
+            <div class='d-flex align-items-baseline gap-3'>
+              <p data-clipboard-target="source" class='text'>19 juin 1997 (26 ans)</p>
+              <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
+            </div>
+          </div>
+
+          <div>
+            <p class='font-label mt-1 mb-0'>Relationship :</p>
+            <div class='d-flex align-items-baseline gap-3 mt-1'>
+              <ul>
+                <li class='text'>👔 Professionel</li>
+              </ul>
+            </div>
+          </div>
+
+          <div data-controller="clipboard" class='d-flex flex-column mt-1'>
+            <p class='font-label mb-0'>Personal notes :</p>
+            <div class='d-flex flex-column gap-3 mt-1'>
+              <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text">
+              Avec succès, j'ai élargi mes compétences informatiques vers la programmationweb, illustrant ma passion pour la tech.
+              <br>Mon atout majeur réside dans ma personnalité dynamique et collaborative. Convaincu que mon enthousiasme, ma rapidité d'adaptation et ma propension naturelle à encourager un environnement positif seront des atouts précieux pour tout projet et équipe.
+              </p>
+              <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
+                <p class='mb-0'>Copy</p>
+                <i class="fa-regular fa-clipboard"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%# End of mobile display %>
+
+
+  <%# Desktop display : %>
+    <div class="<%= 'gap-4 d-none d-md-flex'%>">
+      <div class="image mt-5">
+        <%= image_tag("CV.jpg", gravity: :face, height: 400, width: 400, crop: :fill, style: 'border-radius: 15px;',  alt: "contact picture") %>
+      </div>
+
+      <div class="infos mt-5">
+        <div data-controller="clipboard" class='d-none d-md-flex align-items-baseline mt-3 gap-3'>
+          <p class='font-label'>Phone number :</p>
+          <p data-clipboard-target="source" class='text'>(+33) 06 68 25 13 26</p>
+          <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
+        </div>
+
+        <div data-controller="clipboard" class='d-none d-md-flex align-items-baseline mt-3 gap-3'>
+          <p class='font-label'>Address :</p>
+          <p data-clipboard-target="source" class='text'>14 rue Maurice Boyau, 91220, Bretigny-sur-Orge</p>
+          <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
+        </div>
+
+        <div data-controller="clipboard" class='d-none d-md-flex align-items-baseline mt-3 gap-3'>
+          <p class='font-label'>Date of birth :</p>
+          <p data-clipboard-target="source" class='text'>19 juin 1997 (26 ans)</p>
+          <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
+          <p class='font-label'>Relationship :</p>
+          <ul>
+            <li class='text'>👔 Professionel</li>
+          </ul>
+        </div>
+
+        <div data-controller="clipboard" class='d-none d-md-flex flex-column mt-3'>
+          <p class='font-label'>Personal notes :</p>
+          <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text">
+          Avec succès, j'ai élargi mes compétences informatiques vers la programmationweb, illustrant ma passion pour la tech.
+          <br>Mon atout majeur réside dans ma personnalité dynamique et collaborative. Convaincu que mon enthousiasme, ma rapidité d'adaptation et ma propension naturelle à encourager un environnement positif seront des atouts précieux pour tout projet et équipe.
+          </p>
+          <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
+            <p class='mb-0'>Copy</p>
+            <i class="fa-regular fa-clipboard"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  <%# End of desktop display %>
+</div>
