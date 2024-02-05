@@ -1,21 +1,19 @@
-<div class="container mt-3 mb-3 d-flex flex-column align-items-center">
-  <div class='position-relative d-md-flex justify-content-evenly w-100 gap-3'>
+<div class="container mt-3 mb-3 d-flex flex-column align-items-center position-relative">
     <%# Bouton mobile %>
       <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
-        class:'d-md-none btn btn-grey-square', rel: 'prefetch' %>
+        class:'d-md-none btn btn-grey-square me-auto sticky', rel: 'prefetch' %>
     <%# Bouton desktop %>
       <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), (request.referer || contacts_path),
-        class:'d-none d-md-flex btn btn-grey me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
+        class:'d-none d-md-flex btn btn-grey sticky me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
 
-    <div class="position-absolute top-0 start-50 translate-middle-x d-flex align-items-center gap-3 ms-4">
-      <h1 class='title'><%= @contact.first_name %> <%= @contact.last_name %></h1>
-      <div class="dropdown">
-        <button type="button" class="dropdown-toggle btn btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
-        <ul class="dropdown-menu menu-radius">
-          <li><%= link_to '🎨 Edit', edit_contact_path(@contact), class: "dropdown-item choice-menu no-underline" %></li>
-          <li><%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{@contact.first_name} ?" }, class: "dropdown-item choice-menu no-underline" %></li>
-        </ul>
-      </div>
+  <div class='position-absolute d-flex gap-3 align-items-center justify-content-center'>
+    <h1 class='title'><%= @contact.first_name %> <%= @contact.last_name %></h1>
+    <div class="dropdown">
+      <button type="button" class="dropdown-toggle btn btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <ul class="dropdown-menu menu-radius">
+        <li><%= link_to '🎨 Edit', edit_contact_path(@contact), class: "dropdown-item choice-menu no-underline" %></li>
+        <li><%= link_to '💣 Delete', contact_path(@contact), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to permanently delete #{@contact.first_name} ?" }, class: "dropdown-item choice-menu no-underline" %></li>
+      </ul>
     </div>
   </div>
 
@@ -60,9 +58,9 @@
           <div>
             <p class='font-label mt-1 mb-0'>Relationship :</p>
             <div class='d-flex align-items-baseline gap-3 mt-1'>
-              <ul>
+              <ul class='text'>
                 <% @contact.relations.each do |relation| %>
-                  <li class='text'><%= relation.relation_type %></li>
+                  <li><%= relation.relation_type %></li>
                 <% end %>
               </ul>
             </div>
@@ -117,9 +115,9 @@
             <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
           <% end %>
           <p class='font-label'>Relationship :</p>
-          <ul>
+          <ul class='text'>
             <% @contact.relations.each do |relation| %>
-              <li class='text'><%= relation.relation_type %></li>
+              <li><%= relation.relation_type %></li>
             <% end %>
           </ul>
         </div>

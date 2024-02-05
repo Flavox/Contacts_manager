@@ -7,6 +7,9 @@
 .text {
   font-family: 'Handlee', cursive;
   font-size: 1.1rem;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 15px;
+  padding: (1rem * .5) !important;
 }
 
 .font-label {
@@ -23,4 +26,10 @@
 
 .no-underline {
   text-decoration-line: none;
+}
+
+@media(max-width: 576px) {
+  .title {
+    margin-bottom: 0px;
+  }
 }

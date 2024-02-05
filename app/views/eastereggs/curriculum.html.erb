@@ -10,7 +10,7 @@
           <p>And no one can edit my life 😉</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sorry !</button>
+          <button type="button" class="btn btn-grey" data-bs-dismiss="modal">Sorry !</button>
         </div>
       </div>
     </div>
@@ -27,38 +27,34 @@
           <p>So please do not delete me 😨</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sorry !</button>
+          <button type="button" class="btn btn-grey" data-bs-dismiss="modal">Sorry !</button>
         </div>
       </div>
     </div>
   </div>
 
-<%# Common display (Header): %>
-  <div class="container mt-3 mb-3 d-flex flex-column align-items-center">
-    <div class='position-relative d-md-flex justify-content-evenly w-100 gap-3'>
-      <%# Bouton mobile %>
-        <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
-          class:'d-md-none btn btn-grey-square', rel: 'prefetch' %>
-      <%# Bouton desktop %>
-        <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), (request.referer || contacts_path),
-          class:'d-none d-md-flex btn btn-grey me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
+<div class="container mt-3 mb-3 d-flex flex-column align-items-center position-relative">
+  <%# Bouton mobile %>
+    <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
+      class:'d-md-none btn btn-grey-square me-auto sticky', rel: 'prefetch' %>
+  <%# Bouton desktop %>
+    <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), (request.referer || contacts_path),
+      class:'d-none d-md-flex btn btn-grey sticky me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
 
-      <div class="position-absolute top-0 start-50 translate-middle-x d-flex align-items-center gap-3 ms-4">
-        <h1 class='title'>Flavien LERAY</h1>
-        <div class="dropdown">
-          <button type="button" class="dropdown-toggle btn btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
-          <ul class="dropdown-menu menu-radius">
-            <button type="button" class="dropdown-item choice-menu no-underline" data-bs-toggle="modal" data-bs-target="#editModal">
-              🎨 Edit
-            </button>
-            <button type="button" class="dropdown-item choice-menu no-underline" data-bs-toggle="modal" data-bs-target="#deleteModal">
-              💣 Delete
-            </button>
-          </ul>
-        </div>
-      </div>
+  <div class='position-absolute d-flex gap-3 align-items-center justify-content-center'>
+    <h1 class='title'>Flavien LERAY</h1>
+    <div class="dropdown">
+      <button type="button" class="dropdown-toggle btn btn-grey-square" data-bs-toggle="dropdown" aria-expanded="false"></button>
+      <ul class="dropdown-menu menu-radius">
+        <button type="button" class="dropdown-item choice-menu no-underline" data-bs-toggle="modal" data-bs-target="#editModal">
+          🎨 Edit
+        </button>
+        <button type="button" class="dropdown-item choice-menu no-underline" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          💣 Delete
+        </button>
+      </ul>
     </div>
-
+  </div>
 
   <%# Mobile display : %>
     <div class="d-md-none">
@@ -103,7 +99,7 @@
             <p class='font-label mb-0'>Personal notes :</p>
             <div class='d-flex flex-column gap-3 mt-1'>
               <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text">
-              Avec succès, j'ai élargi mes compétences informatiques vers la programmationweb, illustrant ma passion pour la tech.
+              Avec succès, j'ai élargi mes compétences informatiques vers la programmation web, illustrant ma passion pour la tech.
               <br>Mon atout majeur réside dans ma personnalité dynamique et collaborative. Convaincu que mon enthousiasme, ma rapidité d'adaptation et ma propension naturelle à encourager un environnement positif seront des atouts précieux pour tout projet et équipe.
               </p>
               <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
@@ -150,7 +146,7 @@
         <div data-controller="clipboard" class='d-none d-md-flex flex-column mt-3'>
           <p class='font-label'>Personal notes :</p>
           <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text">
-          Avec succès, j'ai élargi mes compétences informatiques vers la programmationweb, illustrant ma passion pour la tech.
+          Avec succès, j'ai élargi mes compétences informatiques vers la programmation web, illustrant ma passion pour la tech.
           <br>Mon atout majeur réside dans ma personnalité dynamique et collaborative. Convaincu que mon enthousiasme, ma rapidité d'adaptation et ma propension naturelle à encourager un environnement positif seront des atouts précieux pour tout projet et équipe.
           </p>
           <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
