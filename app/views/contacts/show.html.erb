@@ -28,7 +28,7 @@
           <div data-controller="clipboard">
             <p class='font-label mt-1 mb-0'>Phone number :</p>
             <div class='d-flex align-items-baseline gap-3'>
-              <p data-clipboard-target="source" class='text'><%= @contact.phone_number %></p>
+              <p data-clipboard-target="source" class='text background'><%= @contact.phone_number %></p>
               <% if @contact.phone_number.present? %>
                 <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
               <% end %>
@@ -38,7 +38,7 @@
           <div data-controller="clipboard">
             <p class='font-label mt-1 mb-0'>Address :</p>
             <div class='d-flex align-items-baseline gap-3'>
-              <%= simple_format(@contact.address, data: { clipboard_target: "source" }, class: 'text') %>
+              <%= simple_format(@contact.address, data: { clipboard_target: "source" }, class: 'text background') %>
               <% if @contact.address.present? %>
                 <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
               <% end %>
@@ -48,7 +48,7 @@
           <div data-controller="clipboard">
             <p class='font-label mt-1 mb-0'>Date of birth :</p>
             <div class='d-flex align-items-baseline gap-3'>
-              <p data-clipboard-target="source" class='text'><%= @contact.birthday.strftime('%b %e, %Y') if @contact.birthday%></p>
+              <p data-clipboard-target="source" class='text background'><%= @contact.birthday.strftime('%b %e, %Y') if @contact.birthday%></p>
               <% if @contact.birthday.present? %>
                 <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
               <% end %>
@@ -58,7 +58,7 @@
           <div>
             <p class='font-label mt-1 mb-0'>Relationship :</p>
             <div class='d-flex align-items-baseline gap-3 mt-1'>
-              <ul class='text'>
+              <ul class='text background'>
                 <% @contact.relations.each do |relation| %>
                   <li><%= relation.relation_type %></li>
                 <% end %>
@@ -69,7 +69,7 @@
           <div data-controller="clipboard" class='d-flex flex-column mt-1'>
             <p class='font-label mb-0'>Personal notes :</p>
             <div class='d-flex flex-column gap-3 mt-1'>
-              <%= simple_format(@contact.note, data: { controller: 'read-more', action: 'read_more#connect', read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more show-less-content text mb-0') %>
+              <%= simple_format(@contact.note, data: { controller: 'read-more', action: 'read_more#connect', read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more show-less-content text background mb-0') %>
               <% if @contact.note.present? %>
                 <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
                 <p class='mb-0'>Copy</p>
@@ -94,7 +94,7 @@
       <div class="infos mt-5">
         <div data-controller="clipboard" class='d-none d-md-flex align-items-baseline mt-3 gap-3'>
           <p class='font-label'>Phone number :</p>
-          <p data-clipboard-target="source" class='text'><%= @contact.phone_number %></p>
+          <p data-clipboard-target="source" class='text background'><%= @contact.phone_number %></p>
           <% if @contact.phone_number.present? %>
             <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
           <% end %>
@@ -102,7 +102,7 @@
 
         <div data-controller="clipboard" class='d-none d-md-flex align-items-baseline mt-3 gap-3'>
           <p class='font-label'>Address :</p>
-          <%= simple_format(@contact.address, data: { clipboard_target: "source" }, class: 'text') %>
+          <%= simple_format(@contact.address, data: { clipboard_target: "source" }, class: 'text background') %>
           <% if @contact.address.present? %>
             <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
           <% end %>
@@ -110,12 +110,12 @@
 
         <div data-controller="clipboard" class='d-none d-md-flex align-items-baseline mt-3 gap-3'>
           <p class='font-label'>Date of birth :</p>
-          <p data-clipboard-target="source" class='text'><%= @contact.birthday.strftime('%b %e, %Y') if @contact.birthday%></p>
+          <p data-clipboard-target="source" class='text background'><%= @contact.birthday.strftime('%b %e, %Y') if @contact.birthday%></p>
           <% if @contact.birthday.present? %>
             <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
           <% end %>
           <p class='font-label'>Relationship :</p>
-          <ul class='text'>
+          <ul class='text background'>
             <% @contact.relations.each do |relation| %>
               <li><%= relation.relation_type %></li>
             <% end %>
@@ -124,7 +124,7 @@
 
         <div data-controller="clipboard" class='d-none d-md-flex flex-column mt-3'>
           <p class='font-label'>Personal notes :</p>
-          <%= simple_format(@contact.note, data: { controller: 'read-more', action: 'read_more#connect', read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more show-less-content text') %>
+          <%= simple_format(@contact.note, data: { controller: 'read-more', action: 'read_more#connect', read_more_target: 'text', clipboard_target: "source" }, class: 'add-read-more show-less-content text background') %>
           <% if @contact.note.present? %>
             <button data-action="clipboard#copy" data-clipboard-target="notice" class='btn btn-grey d-flex align-items-center gap-2 align-self-center p-2'>
             <p class='mb-0'>Copy</p>
