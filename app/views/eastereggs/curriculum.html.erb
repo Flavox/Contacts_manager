@@ -36,10 +36,10 @@
 <div class="container mt-3 mb-3 d-flex flex-column align-items-center position-relative">
   <%# Bouton mobile %>
     <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
-      class:'d-md-none btn btn-grey-square me-auto sticky', rel: 'prefetch' %>
+      class:'d-md-none btn btn-grey-square me-auto sticky z-3', rel: 'prefetch' %>
   <%# Bouton desktop %>
     <%= link_to raw('<i class="fa-solid fa-chevron-left"></i> Back'), (request.referer || contacts_path),
-      class:'d-none d-md-flex btn btn-grey sticky me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
+      class:'d-none d-md-flex btn btn-grey sticky z-3 me-auto d-flex align-items-baseline pt-2 mt-1 gap-2', rel: 'prefetch' %>
 
   <div class='position-absolute d-flex gap-3 align-items-center justify-content-center'>
     <h1 class='title'>Flavien LERAY</h1>
@@ -225,10 +225,10 @@
         </div>
       </div>
     </div>
-    <div data-aos="flip-up" data-aos-easing= "ease-in" data-aos-anchor-placement="bottom-top" data-aos-duration = "500" class="d-flex flex-column align-items-center w-100 mt-4">
+    <div data-aos="flip-up" data-aos-easing= "ease-in" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" class="d-flex flex-column align-items-center w-100 mt-4">
       <h1>COMPÉTENCES & ATOUTS</h1>
       <div class="d-md-flex w-75 justify-content-evenly gap-5 mt-3">
-        <div data-aos="slide-right" data-aos-anchor-placement="bottom-top" data-aos-duration = "500">
+        <div data-aos="slide-right" data-aos-anchor-placement="top-bottom" data-aos-duration = "500">
           <div class="card color-card l-pink mb-3">
             <div class="card-header card-title h3 text-center">COMPÉTENCES</div>
             <div class="card-body">
@@ -249,7 +249,7 @@
             </div>
           </div>
         </div>
-        <div data-aos="slide-left" data-aos-anchor-placement="bottom-top" data-aos-duration = "500">
+        <div data-aos="slide-left" data-aos-anchor-placement="top-bottom" data-aos-duration = "500">
           <div class="card color-card d-pink mb-3">
             <div class="card-header card-title h3 text-center">ATOUTS</div>
             <div class="card-body">
