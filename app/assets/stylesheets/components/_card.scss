@@ -20,6 +20,25 @@
   color: black;
 }
 
+.color-card {
+  max-width: 25rem;
+  height: fit-content;
+  border-width: 5px;
+  border-radius: 15px;
+}
+.yellow {
+  border-color: rgb(249,214,21);
+  .card-title {
+    color: #c7ac14;
+  }
+}
+.green {
+  border-color: rgb(128,186,146);
+  .card-title {
+    color: rgb(128,186,146);
+  }
+}
+
 @media(max-width: 576px) {
   .contact-card {
     width: calc(33% - 19px);
