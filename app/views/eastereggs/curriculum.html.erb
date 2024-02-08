@@ -98,9 +98,9 @@
           </div>
 
           <div data-controller="clipboard" class='d-flex flex-column mt-1'>
-            <p class='font-label mb-0'>Personal notes :</p>
+            <p class='font-label mb-0' id='notes'>Personal notes :</p>
             <div class='d-flex flex-column gap-3 mt-1'>
-              <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text background">
+              <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text background" id='content'>
               Avec succès, j'ai élargi mes compétences informatiques vers la programmation web, illustrant ma passion pour la tech.
               <br>Mon atout majeur réside dans ma personnalité dynamique et collaborative. Convaincu que mon enthousiasme, ma rapidité d'adaptation et ma propension naturelle à encourager un environnement positif seront des atouts précieux pour tout projet et équipe.
               </p>
@@ -163,9 +163,9 @@
 
   <%# AOS %>
     <h1 id='rainbowTyping' class='mt-5'><i class="fa-solid fa-angles-down"></i></h1>
-    <div data-aos="flip-left" data-aos-easing= "ease-out-back" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" class="d-flex flex-column align-items-center w-100 mt-4">
-      <h1>DIPLÔMES ET FORMATIONS</h1>
-      <div data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" class="d-flex flex-column align-items-center w-75 mt-4">
+    <div data-aos="flip-left" data-aos-easing= "ease-in-back" data-aos-anchor="#notes" class="d-flex flex-column align-items-center w-100 mt-5">
+      <h1>DIPLÔMES ET FORMATIONS 🎓</h1>
+      <div data-aos="zoom-in-up" class="d-flex flex-column align-items-center w-75 mt-4">
         <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
           <div class="card color-card yellow mb-3">
             <div class="card-header card-title h3 text-center">Concepteur - Développeur d’Applications Web</div>
@@ -179,7 +179,7 @@
               </div>
             </div>
           </div>
-          <div data-aos="zoom-in-left" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" data-aos-delay= "200">
+          <div data-aos="zoom-in-left" data-aos-delay= "200">
             <div class="card color-card yellow mb-3">
               <div class="card-header card-title h3 text-center">BTS Systèmes Informatiques aux Organisations</div>
               <div class="card-body">
@@ -195,10 +195,10 @@
         </div>
       </div>
     </div>
-    <div data-aos="flip-right" data-aos-easing= "ease-in" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" class="d-flex flex-column align-items-center w-100 mt-4">
-      <h1 class='text-center'>EXPÉRIENCES PROFESSIONNELLES</h1>
+    <div data-aos="flip-right" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4">
+      <h1 class='text-center'>EXPÉRIENCES PROFESSIONNELLES 👔</h1>
       <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
-        <div data-aos="fade-up-right" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" data-aos-delay= "200">
+        <div data-aos="fade-up-right" data-aos-delay= "200">
           <div class="card color-card green mb-3">
             <div class="card-header card-title h3 text-center">Administrateur systèmes et réseaux</div>
             <div class="card-body">
@@ -211,7 +211,7 @@
             </div>
           </div>
         </div>
-        <div data-aos="fade-up-left" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" data-aos-delay= "200">
+        <div data-aos="fade-up-left" data-aos-delay= "200">
           <div class="card color-card green mb-3">
             <div class="card-header card-title h3 text-center">Administrateur systèmes et réseaux junior</div>
             <div class="card-body">
@@ -227,10 +227,10 @@
         </div>
       </div>
     </div>
-    <div data-aos="flip-up" data-aos-easing= "ease-in" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" class="d-flex flex-column align-items-center w-100 mt-4">
-      <h1>COMPÉTENCES & ATOUTS</h1>
+    <div data-aos="flip-up" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4">
+      <h1>COMPÉTENCES & ATOUTS 🚀</h1>
       <div class="d-md-flex w-75 justify-content-evenly gap-5 mt-3">
-        <div data-aos="slide-right" data-aos-anchor-placement="top-bottom" data-aos-duration = "500">
+        <div data-aos="slide-right">
           <div class="card color-card l-pink mb-3">
             <div class="card-header card-title h3 text-center">COMPÉTENCES</div>
             <div class="card-body">
@@ -251,7 +251,7 @@
             </div>
           </div>
         </div>
-        <div data-aos="slide-left" data-aos-anchor-placement="top-bottom" data-aos-duration = "500">
+        <div data-aos="slide-left">
           <div class="card color-card d-pink mb-3">
             <div class="card-header card-title h3 text-center">ATOUTS</div>
             <div class="card-body">
@@ -269,11 +269,11 @@
         </div>
       </div>
     </div>
-    <div data-aos="flip-down" data-aos-easing= "ease-in" data-aos-anchor-placement="top-bottom" data-aos-duration = "500" class="d-flex flex-column align-items-center w-100 mt-4 mb-5">
-      <h1>INFORMATIONS UTILES</h1>
+    <div data-aos="flip-down" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4 mb-5">
+      <h1>INFORMATIONS UTILES ⭐</h1>
       <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
         <div>
-          <div data-aos="fade-down-right" data-aos-anchor-placement="centre-bottom" data-aos-duration = "500" data-aos-delay= "200">
+          <div data-aos="fade-down-right" data-aos-anchor-placement="centre-bottom" data-aos-delay= "200">
             <div class="card color-card pink mb-3">
               <div class="card-header card-title h3 text-center">LANGUES</div>
               <div class="card-body">
@@ -284,19 +284,27 @@
               </div>
             </div>
           </div>
-          <div data-aos="fade-up-right" data-aos-anchor-placement="bottom-bottom" data-aos-duration = "500" data-aos-delay= "200">
+          <div data-aos="fade-up-right" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
             <div class="card color-card orange mb-3">
               <div class="card-header card-title h3 text-center">RÉSEAUX SOCIAUX</div>
               <div class="card-body">
                 <div class="d-flex flex-column gap-1 mt-3">
-                  <h5 class="handlee"><i class="fa-brands fa-github"></i>  @Flavox</h5>
-                  <h5 class="handlee"><i class="fa-brands fa-linkedin"></i>  @flavien-leray</h5>
+                  <%= link_to "https://github.com/Flavox", target: "_blank", class:'d-flex nav-link gap-2' do  %>
+                      <div class="github-icon-container">
+                        <i class="fab fa-github"></i>
+                      </div>
+                    <h5 class="handlee">@Flavox</h5>
+                  <% end %>
+                  <%= link_to "https://www.linkedin.com/in/flavien-leray/", target: "_blank", class:'d-flex nav-link gap-2' do  %>
+                    <h5 class='linkedin'>in</h5>
+                    <h5 class="handlee">@flavien-leray</h5>
+                  <% end %>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div data-aos="slide-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration = "500" data-aos-delay= "200">
+        <div data-aos="slide-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
           <div class="card color-card l-gray mb-3">
             <div class="card-header card-title h3 text-center">RÉFÉRENCE</div>
             <div class="card-body">
@@ -309,7 +317,7 @@
             </div>
           </div>
         </div>
-        <div data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom" data-aos-duration = "500" data-aos-delay= "200">
+        <div data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom" data-aos-delay= "200">
           <div class="card color-card l-purple mb-3">
             <div class="card-header card-title h3 text-center">CENTRES D'INTÉRÊT</div>
             <div class="card-body">
@@ -331,7 +339,6 @@
 
 </div>
 
-<script src="https://unpkg.com/typeit@8.8.3/dist/index.umd.js"></script>
 <script>
   new TypeIt("#rainbowTyping", {
     lifeLike: false,
@@ -379,7 +386,7 @@
 	.type("o")
 	.pause(151)
 	.type("r")
-	.pause(527)
+	.pause(427)
 	.type("s")
 	.pause(370)
 	.type(" ")
@@ -393,7 +400,7 @@
 	.type("o")
 	.pause(218)
 	.type("w")
-	.pause(679)
+	.pause(479)
 	.type(" ")
 	.pause(353)
 	.type("!")
@@ -435,7 +442,9 @@
 	.delete(1, {instant: true})
 	.pause(30)
 	.delete(1, {instant: true})
+  .pause(300)
   .move(10)
+  .pause(300)
   .type(" ")
 	.go();
 
