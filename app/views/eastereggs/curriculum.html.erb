@@ -34,7 +34,7 @@
   </div>
 
 <div data-controller="scroll-progress" data-scroll-progress-target="scrollBar" id='scroll-progress'></div>
-<div class="container mt-3 mb-5 d-flex flex-column align-items-center position-relative no-overflow">
+<div class="container mt-3 mb-5 d-flex flex-column align-items-center position-relative">
 
   <%# Bouton mobile %>
     <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
@@ -92,7 +92,7 @@
             <p class='font-label mt-1 mb-0'>Relationship :</p>
             <div class='d-flex align-items-baseline gap-3 mt-1'>
               <ul>
-                <li class='text background'>👔 Professionel</li>
+                <li class='text background'>👔 Professionnel</li>
               </ul>
             </div>
           </div>
@@ -141,7 +141,7 @@
           <button data-action="clipboard#copy" data-clipboard-target="button" class='btn btn-grey-square'><i class="fa-regular fa-clipboard"></i></button>
           <p class='font-label'>Relationship :</p>
           <ul>
-            <li class='text background'>👔 Professionel</li>
+            <li class='text background'>👔 Professionnel</li>
           </ul>
         </div>
 
@@ -162,183 +162,185 @@
 
 
   <%# AOS %>
-    <h1 id='rainbowTyping' class='mt-5'><i class="fa-solid fa-angles-down"></i></h1>
-    <div data-aos="flip-left" data-aos-easing= "ease-in-back" class="d-flex flex-column align-items-center w-100 mt-5">
-      <h1>DIPLÔMES ET FORMATIONS 🎓</h1>
-      <div data-aos="zoom-in-up" class="d-flex flex-column align-items-center w-75 mt-4">
-        <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
-          <div class="card color-card yellow mb-3">
-            <div class="card-header card-title h3 text-center">Concepteur - Développeur d’Applications Web</div>
-            <div class="card-body">
-              <h4 class="card-title text-center fw-bold">Le Wagon</h4>
-              <p class="card-title">Évry-Courcouronnes - du 09/2023 au 01/2024</p>
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">10 semaines à temps plein d'apprentissage intensif du code.</h5>
-                <h5 class="handlee">2 projets Saas effectué en équipe de 4</h5>
-                <h5 class="handlee">Certification RNCP niveau 6 (RNCP35653)</h5>
-              </div>
-            </div>
-          </div>
-          <div data-aos="zoom-in-left" data-aos-delay= "200">
+    <div class="no-overflow">
+      <h1 id='rainbowTyping' class='mt-5 text-center'><i class="fa-solid fa-angles-down"></i></h1>
+      <div data-aos="flip-left" data-aos-easing= "ease-in-back" class="d-flex flex-column align-items-center w-100 mt-5">
+        <h1 class='text-center'>DIPLÔMES ET FORMATIONS 🎓</h1>
+        <div data-aos="zoom-in-up" class="d-flex flex-column align-items-center w-75 mt-4">
+          <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
             <div class="card color-card yellow mb-3">
-              <div class="card-header card-title h3 text-center">BTS Systèmes Informatiques aux Organisations</div>
+              <div class="card-header card-title h3 text-center">Concepteur - Développeur d’Applications Web</div>
               <div class="card-body">
-                <h4 class="card-title text-center fw-bold">Pole Formation 58-89</h4>
-                <p class="card-title">Auxerre - du 09/2016 au 06/2018</p>
+                <h4 class="card-title text-center fw-bold">Le Wagon</h4>
+                <p class="card-title">Évry-Courcouronnes - du 09/2023 au 01/2024</p>
                 <div class="d-flex flex-column gap-1 mt-3">
-                  <h5 class="handlee">En alternance avec Zodiac Data Systems.</h5>
-                  <h5 class="handlee">Apprentissage des distributions Linux, protocoles réseaux, la mise en place de serveurs, matériel CISCO, schéma et tableau réseaux, virtualisation</h5>
+                  <h5 class="handlee">10 semaines à temps plein d'apprentissage intensif du code.</h5>
+                  <h5 class="handlee">2 projets Saas effectué en équipe de 4</h5>
+                  <h5 class="handlee">Certification RNCP niveau 6 (RNCP35653)</h5>
+                </div>
+              </div>
+            </div>
+            <div data-aos="zoom-in-left" data-aos-delay= "200">
+              <div class="card color-card yellow mb-3">
+                <div class="card-header card-title h3 text-center">BTS Systèmes Informatiques aux Organisations</div>
+                <div class="card-body">
+                  <h4 class="card-title text-center fw-bold">Pole Formation 58-89</h4>
+                  <p class="card-title">Auxerre - du 09/2016 au 06/2018</p>
+                  <div class="d-flex flex-column gap-1 mt-3">
+                    <h5 class="handlee">En alternance avec Zodiac Data Systems.</h5>
+                    <h5 class="handlee">Apprentissage des distributions Linux, protocoles réseaux, la mise en place de serveurs, matériel CISCO, schéma et tableau réseaux, virtualisation</h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div data-aos="flip-right" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4">
-      <h1 class='text-center'>EXPÉRIENCES PROFESSIONNELLES 👔</h1>
-      <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
-        <div data-aos="fade-up-right" data-aos-delay= "200">
-          <div class="card color-card green mb-3">
-            <div class="card-header card-title h3 text-center">Administrateur systèmes et réseaux</div>
-            <div class="card-body">
-              <h4 class="card-title text-center fw-bold">Silvera</h4>
-              <p class="card-title">Parix 16ème - du 03/2022 au 07/2022</p>
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">3 dans l'équipe informatique (Le responsable du service, une alternante et moi-même), nous gérions 200 salariés et avons travaillés sur 1 projet.</h5>
-                <h5 class="handlee">J'ai été backup lors des absences de mon responsable et ai pu le décharger de l'apprentissage de l'alternante.</h5>
+      <div data-aos="flip-right" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4">
+        <h1 class='text-center'>EXPÉRIENCES PROFESSIONNELLES 👔</h1>
+        <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
+          <div data-aos="fade-up-right" data-aos-delay= "200">
+            <div class="card color-card green mb-3">
+              <div class="card-header card-title h3 text-center">Administrateur systèmes et réseaux</div>
+              <div class="card-body">
+                <h4 class="card-title text-center fw-bold">Silvera</h4>
+                <p class="card-title">Parix 16ème - du 03/2022 au 07/2022</p>
+                <div class="d-flex flex-column gap-1 mt-3">
+                  <h5 class="handlee">3 dans l'équipe informatique (Le responsable du service, une alternante et moi-même), nous gérions 200 salariés et avons travaillés sur 1 projet.</h5>
+                  <h5 class="handlee">J'ai été backup lors des absences de mon responsable et ai pu le décharger de l'apprentissage de l'alternante.</h5>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div data-aos="fade-up-left" data-aos-delay= "200">
-          <div class="card color-card green mb-3">
-            <div class="card-header card-title h3 text-center">Administrateur systèmes et réseaux junior</div>
-            <div class="card-body">
-              <h4 class="card-title text-center fw-bold">Saretec</h4>
-              <p class="card-title">Créteil - du 10/2018 au 03/2022</p>
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">1500 collaborateurs, permettant d'améliorer plusieurs qualités et compétences transversales.</h5>
-                <h5 class="handlee">Participation à de nombreux projets de déploiement/renouvellement en parallèle du support.</h5>
-                <h5 class="handlee">Souvent 2 dans l'équipe, j'ai été confronté avec mon collègue à des charges de travail intensifs résolues avec succès.</h5>
+          <div data-aos="fade-up-left" data-aos-delay= "200">
+            <div class="card color-card green mb-3">
+              <div class="card-header card-title h3 text-center">Administrateur systèmes et réseaux junior</div>
+              <div class="card-body">
+                <h4 class="card-title text-center fw-bold">Saretec</h4>
+                <p class="card-title">Créteil - du 10/2018 au 03/2022</p>
+                <div class="d-flex flex-column gap-1 mt-3">
+                  <h5 class="handlee">1500 collaborateurs, permettant d'améliorer plusieurs qualités et compétences transversales.</h5>
+                  <h5 class="handlee">Participation à de nombreux projets de déploiement/renouvellement en parallèle du support.</h5>
+                  <h5 class="handlee">Souvent 2 dans l'équipe, j'ai été confronté avec mon collègue à des charges de travail intensifs résolues avec succès.</h5>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div data-aos="flip-up" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4">
-      <h1>COMPÉTENCES & ATOUTS 🚀</h1>
-      <div class="d-md-flex w-75 justify-content-evenly gap-5 mt-3">
-        <div data-aos="slide-right">
-          <div class="card color-card l-pink mb-3">
-            <div class="card-header card-title h3 text-center">COMPÉTENCES</div>
-            <div class="card-body">
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">Ruby on rails</h5>
-                <h5 class="handlee">SaaS</h5>
-                <h5 class="handlee">Figma</h5>
-                <h5 class="handlee">Bootstrap</h5>
-                <h5 class="handlee">PostgreSQL</h5>
-                <h5 class="handlee">git</h5>
-                <h5 class="handlee">Github</h5>
-                <h5 class="handlee">Heroku</h5>
-                <h5 class="handlee">Stimulus</h5>
-                <h5 class="handlee">Javascript ES6</h5>
-                <h5 class="handlee">HTML 5</h5>
-                <h5 class="handlee">CSS 3</h5>
+      <div data-aos="flip-up" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4">
+        <h1 class='text-center'>COMPÉTENCES & ATOUTS 🚀</h1>
+        <div class="d-md-flex w-75 justify-content-evenly gap-5 mt-3">
+          <div data-aos="slide-right">
+            <div class="card color-card l-pink mb-3">
+              <div class="card-header card-title h3 text-center">COMPÉTENCES</div>
+              <div class="card-body">
+                <div class="d-flex flex-column gap-1 mt-3">
+                  <h5 class="handlee">Ruby on rails</h5>
+                  <h5 class="handlee">SaaS</h5>
+                  <h5 class="handlee">Figma</h5>
+                  <h5 class="handlee">Bootstrap</h5>
+                  <h5 class="handlee">PostgreSQL</h5>
+                  <h5 class="handlee">git</h5>
+                  <h5 class="handlee">Github</h5>
+                  <h5 class="handlee">Heroku</h5>
+                  <h5 class="handlee">Stimulus</h5>
+                  <h5 class="handlee">Javascript ES6</h5>
+                  <h5 class="handlee">HTML 5</h5>
+                  <h5 class="handlee">CSS 3</h5>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div data-aos="slide-left">
-          <div class="card color-card d-pink mb-3">
-            <div class="card-header card-title h3 text-center">ATOUTS</div>
-            <div class="card-body">
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">Collaboration et travail en équipe</h5>
-                <h5 class="handlee">Communication ouverte et constructive</h5>
-                <h5 class="handlee">Curiosité, apprentissage continu</h5>
-                <h5 class="handlee">Proactif et persévérant</h5>
-                <h5 class="handlee">Capacité d'adaptation</h5>
-                <h5 class="handlee">Prise de recul</h5>
-                <h5 class="handlee">Sens de la conception</h5>
+          <div data-aos="slide-left">
+            <div class="card color-card d-pink mb-3">
+              <div class="card-header card-title h3 text-center">ATOUTS</div>
+              <div class="card-body">
+                <div class="d-flex flex-column gap-1 mt-3">
+                  <h5 class="handlee">Collaboration et travail en équipe</h5>
+                  <h5 class="handlee">Communication ouverte et constructive</h5>
+                  <h5 class="handlee">Curiosité, apprentissage continu</h5>
+                  <h5 class="handlee">Proactif et persévérant</h5>
+                  <h5 class="handlee">Capacité d'adaptation</h5>
+                  <h5 class="handlee">Prise de recul</h5>
+                  <h5 class="handlee">Sens de la conception</h5>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div data-aos="flip-down" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4 mb-5">
-      <h1>INFORMATIONS UTILES ⭐</h1>
-      <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
-        <div>
-          <div data-aos="fade-down-right" data-aos-anchor-placement="centre-bottom" data-aos-delay= "200">
-            <div class="card color-card pink mb-3">
-              <div class="card-header card-title h3 text-center">LANGUES</div>
-              <div class="card-body">
-                <div class="d-flex flex-column gap-1 mt-3">
-                  <h5 class="handlee">Français (natale)</h5>
-                  <h5 class="handlee">Anglais</h5>
+      <div data-aos="flip-down" data-aos-easing= "ease-in" class="d-flex flex-column align-items-center w-100 mt-4 mb-5">
+        <h1 class='text-center'>INFORMATIONS UTILES ⭐</h1>
+        <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
+          <div>
+            <div data-aos="fade-down-right" data-aos-anchor-placement="centre-bottom" data-aos-delay= "200">
+              <div class="card color-card pink mb-3">
+                <div class="card-header card-title h3 text-center">LANGUES</div>
+                <div class="card-body">
+                  <div class="d-flex flex-column gap-1 mt-3">
+                    <h5 class="handlee">Français (natale)</h5>
+                    <h5 class="handlee">Anglais</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up-right" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
+              <div class="card color-card orange mb-3">
+                <div class="card-header card-title h3 text-center">RÉSEAUX SOCIAUX</div>
+                <div class="card-body">
+                  <div class="d-flex flex-column gap-1 mt-3">
+                    <%= link_to "https://github.com/Flavox", target: "_blank", class:'d-flex nav-link gap-2' do  %>
+                        <div class="github-icon-container">
+                          <i class="fab fa-github"></i>
+                        </div>
+                      <h5 class="handlee">@Flavox</h5>
+                    <% end %>
+                    <%= link_to "https://www.linkedin.com/in/flavien-leray/", target: "_blank", class:'d-flex nav-link gap-2' do  %>
+                      <h5 class='linkedin'>in</h5>
+                      <h5 class="handlee">@flavien-leray</h5>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div data-aos="fade-up-right" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
-            <div class="card color-card orange mb-3">
-              <div class="card-header card-title h3 text-center">RÉSEAUX SOCIAUX</div>
-              <div class="card-body">
-                <div class="d-flex flex-column gap-1 mt-3">
-                  <%= link_to "https://github.com/Flavox", target: "_blank", class:'d-flex nav-link gap-2' do  %>
-                      <div class="github-icon-container">
-                        <i class="fab fa-github"></i>
-                      </div>
-                    <h5 class="handlee">@Flavox</h5>
-                  <% end %>
-                  <%= link_to "https://www.linkedin.com/in/flavien-leray/", target: "_blank", class:'d-flex nav-link gap-2' do  %>
-                    <h5 class='linkedin'>in</h5>
-                    <h5 class="handlee">@flavien-leray</h5>
-                  <% end %>
+          <div>
+            <div data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
+              <div class="card color-card l-gray mb-3">
+                <div class="card-header card-title h3 text-center">RÉFÉRENCE</div>
+                <div class="card-body">
+                  <h4 class="card-title text-center fw-bold">Monsieur Tung DINH</h4>
+                  <div class="d-flex flex-column gap-1 mt-3">
+                    <h5 class="handlee">Responsable service informatique, Silvera</h5>
+                    <h5 class="handlee">01 53 65 78 64</h5>
+                    <h5 class="handlee">t.dinh@silvera.fr</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-aos="slide-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
+              <div class="card color-card blue mb-3">
+                <div class="card-header card-title h3 text-center">TÉLÉCHARGER</div>
+                <div class="card-body d-flex justify-content-center">
+                  <a href="/downloads/F-LERAY_CV.pdf" download="F-LERAY_CV.pdf" class="card-title fw-bold h4 no-underline"><i class="fa-solid fa-file-arrow-down"></i>  Mon CV (.pdf)</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
-            <div class="card color-card l-gray mb-3">
-              <div class="card-header card-title h3 text-center">RÉFÉRENCE</div>
+          <div data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom" data-aos-delay= "200">
+            <div class="card color-card l-purple mb-3">
+              <div class="card-header card-title h3 text-center">CENTRES D'INTÉRÊT</div>
               <div class="card-body">
-                <h4 class="card-title text-center fw-bold">Monsieur Tung DINH</h4>
                 <div class="d-flex flex-column gap-1 mt-3">
-                  <h5 class="handlee">Responsable service informatique, Silvera</h5>
-                  <h5 class="handlee">01 53 65 78 64</h5>
-                  <h5 class="handlee">t.dinh@silvera.fr</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-aos="slide-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
-            <div class="card color-card blue mb-3">
-              <div class="card-header card-title h3 text-center">TÉLÉCHARGER</div>
-              <div class="card-body d-flex justify-content-center">
-                <a href="/downloads/F-LERAY_CV.pdf" download="F-LERAY_CV.pdf" class="card-title fw-bold h4 no-underline"><i class="fa-solid fa-file-arrow-down"></i>  Mon CV (.pdf)</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom" data-aos-delay= "200">
-          <div class="card color-card l-purple mb-3">
-            <div class="card-header card-title h3 text-center">CENTRES D'INTÉRÊT</div>
-            <div class="card-body">
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">Milieu associatif</h5>
-                <h5 class="handlee">Expérience itinérante</h5>
-                <h5 class="handlee">Informatique</h5>
-                <h5 class="handlee">Cuisine traditionnel</h5>
-                <div class="d-flex gap-3">
-                  <h5 class="handlee">Jeux</h5>
-                  <p class="handlee">Jeux de rôles, jeux de société, jeux-vidéos, billard, pétanque, bowling</p>
+                  <h5 class="handlee">Milieu associatif</h5>
+                  <h5 class="handlee">Expérience itinérante</h5>
+                  <h5 class="handlee">Informatique</h5>
+                  <h5 class="handlee">Cuisine traditionnel</h5>
+                  <div class="d-flex gap-3">
+                    <h5 class="handlee">Jeux</h5>
+                    <p class="handlee">Jeux de rôles, jeux de société, jeux-vidéos, billard, pétanque, bowling</p>
+                  </div>
                 </div>
               </div>
             </div>
