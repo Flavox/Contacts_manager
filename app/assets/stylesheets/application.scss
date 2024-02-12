@@ -17,38 +17,3 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-
-::-webkit-scrollbar {
-  width: 10px; /* Largeur de l'ascenseur */
-}
-/* Track (fond) de l'ascenseur */
-::-webkit-scrollbar-track {
-  background: #2200ff; /* Couleur de fond */
-}
-/* Thumb (poignée) de l'ascenseur */
-::-webkit-scrollbar-thumb {
-  background: #ff0000; /* Couleur de la poignée */
-  border-radius: 5px; /* Rayon de la bordure de la poignée */
-}
-/* Coin supérieur droit de l'ascenseur */
-::-webkit-scrollbar-corner {
-  background: transparent; /* Couleur du coin */
-}
-
-
-::-moz-scrollbar {
-  width: 10px; /* Largeur de l'ascenseur */
-}
-/* Track (fond) de l'ascenseur */
-::-moz-scrollbar-track {
-  background: #2200ff; /* Couleur de fond */
-}
-/* Thumb (poignée) de l'ascenseur */
-::-moz-scrollbar-thumb {
-  background: #ff0000; /* Couleur de la poignée */
-  border-radius: 50%; /* Rayon de la bordure de la poignée */
-}
-/* Coin supérieur droit de l'ascenseur */
-::-moz-scrollbar-corner {
-  background: transparent; /* Couleur du coin */
-}

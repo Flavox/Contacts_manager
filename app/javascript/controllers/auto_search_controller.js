@@ -13,7 +13,7 @@ export default class extends Controller {
     const query = this.inputTarget.value;
     const url = `${window.location.href}?query=${query}`;
 
-    if (query.toLowerCase() === 'curriculum') {
+    if (query.trim().toLowerCase() === 'curriculum') {
       this.hiddenTarget.classList.remove('d-none');
     } else {
       this.hiddenTarget.classList.add('d-none');
