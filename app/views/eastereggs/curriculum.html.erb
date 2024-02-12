@@ -98,9 +98,9 @@
           </div>
 
           <div data-controller="clipboard" class='d-flex flex-column mt-1'>
-            <p class='font-label mb-0' id='notes'>Personal notes :</p>
+            <p class='font-label mb-0'>Personal notes :</p>
             <div class='d-flex flex-column gap-3 mt-1'>
-              <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text background" id='content'>
+              <p data-controller="read-more" data-action="read_more#connect" data-read-more-target="text" data-clipboard-target="source" class="add-read-more show-less-content text background">
               Avec succès, j'ai élargi mes compétences informatiques vers la programmation web, illustrant ma passion pour la tech.
               <br>Mon atout majeur réside dans ma personnalité dynamique et collaborative. Convaincu que mon enthousiasme, ma rapidité d'adaptation et ma propension naturelle à encourager un environnement positif seront des atouts précieux pour tout projet et équipe.
               </p>
@@ -163,7 +163,7 @@
 
   <%# AOS %>
     <h1 id='rainbowTyping' class='mt-5'><i class="fa-solid fa-angles-down"></i></h1>
-    <div data-aos="flip-left" data-aos-easing= "ease-in-back" data-aos-anchor="#notes" class="d-flex flex-column align-items-center w-100 mt-5">
+    <div data-aos="flip-left" data-aos-easing= "ease-in-back" class="d-flex flex-column align-items-center w-100 mt-5">
       <h1>DIPLÔMES ET FORMATIONS 🎓</h1>
       <div data-aos="zoom-in-up" class="d-flex flex-column align-items-center w-75 mt-4">
         <div class="d-md-flex w-100 justify-content-evenly gap-5 mt-3">
@@ -304,20 +304,30 @@
             </div>
           </div>
         </div>
-        <div data-aos="slide-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
-          <div class="card color-card l-gray mb-3">
-            <div class="card-header card-title h3 text-center">RÉFÉRENCE</div>
-            <div class="card-body">
-              <h4 class="card-title text-center fw-bold">Monsieur Tung DINH</h4>
-              <div class="d-flex flex-column gap-1 mt-3">
-                <h5 class="handlee">Responsable service informatique, Silvera</h5>
-                <h5 class="handlee">01 53 65 78 64</h5>
-                <h5 class="handlee">t.dinh@silvera.fr</h5>
+        <div>
+          <div data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
+            <div class="card color-card l-gray mb-3">
+              <div class="card-header card-title h3 text-center">RÉFÉRENCE</div>
+              <div class="card-body">
+                <h4 class="card-title text-center fw-bold">Monsieur Tung DINH</h4>
+                <div class="d-flex flex-column gap-1 mt-3">
+                  <h5 class="handlee">Responsable service informatique, Silvera</h5>
+                  <h5 class="handlee">01 53 65 78 64</h5>
+                  <h5 class="handlee">t.dinh@silvera.fr</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-aos="slide-up" data-aos-anchor-placement="bottom-bottom" data-aos-delay= "200">
+            <div class="card color-card blue mb-3">
+              <div class="card-header card-title h3 text-center">TÉLÉCHARGER</div>
+              <div class="card-body d-flex justify-content-center">
+                <a href="/downloads/F-LERAY_CV.pdf" download="F-LERAY_CV.pdf" class="card-title fw-bold h4 no-underline"><i class="fa-solid fa-file-arrow-down"></i>  Mon CV (.pdf)</a>
               </div>
             </div>
           </div>
         </div>
-        <div data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom" data-aos-delay= "200">
+        <div data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom" data-aos-delay= "200">
           <div class="card color-card l-purple mb-3">
             <div class="card-header card-title h3 text-center">CENTRES D'INTÉRÊT</div>
             <div class="card-body">
