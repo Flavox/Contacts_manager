@@ -34,7 +34,7 @@
   </div>
 
 <div data-controller="scroll-progress" data-scroll-progress-target="scrollBar" id='scroll-progress'></div>
-<div class="container mt-3 mb-5 d-flex flex-column align-items-center position-relative">
+<div class="container mt-3 mb-5 d-flex flex-column align-items-center position-relative no-overflow">
 
   <%# Bouton mobile %>
     <%= link_to raw('<i class="fa-solid fa-chevron-left"></i>'), (request.referer || contacts_path),
