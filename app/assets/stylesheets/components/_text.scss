@@ -35,6 +35,10 @@
   text-decoration-line: none;
 }
 
+.tshadow {
+  text-shadow: 1px 1px 4px gray;
+}
+
 @media(max-width: 576px) {
   .title {
     margin-bottom: 0px;
