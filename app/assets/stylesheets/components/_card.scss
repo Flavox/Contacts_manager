@@ -27,6 +27,18 @@
   border-radius: 15px;
 }
 
+.shadow-right {
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.shadow-center {
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.shadow-left {
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
 @media(max-width: 576px) {
   .contact-card {
     width: calc(33% - 19px);
